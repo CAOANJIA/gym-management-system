@@ -9,54 +9,63 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">员工管理</h1>
+                <h1 class="mt-4">教练管理</h1>
 
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
-                    <li class="breadcrumb-item active">员工管理</li>
+                    <li class="breadcrumb-item active">教练管理</li>
                 </ol>
 
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        员工信息表
+                        教练信息表
                     </div>
                     <div class="card-body">
                         <table id="datatablesSimple">
                             <thead>
                             <tr>
-                                <th>工号</th>
+<!--                                <th>工号</th>-->
+<!--                                <th>姓名</th>-->
+<!--                                <th>性别</th>-->
+<!--                                <th>年龄</th>-->
+<!--                                <th>入职时间</th>-->
+<!--                                <th>职务</th>-->
+<!--                                <th>备注信息</th>-->
+<!--                                <th>操作</th>-->
+                                <th>编号</th>
                                 <th>姓名</th>
                                 <th>性别</th>
-                                <th>年龄</th>
-                                <th>入职时间</th>
-                                <th>职务</th>
-                                <th>备注信息</th>
+                                <th>账号</th>
+                                <th>电话</th>
+                                <th>插入时间</th>
+                                <th>修改时间</th>
+                                <th>备注</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            <tr th:each="emp:${employeeList}">
-                                <td th:text="${emp.employeeAccount}">工号</td>
-                                <td th:text="${emp.employeeName}">姓名</td>
-                                <td th:text="${emp.employeeGender}">性别</td>
-                                <td th:text="${emp.employeeAge}">年龄</td>
-                                <td th:text="${emp.entryTime}">入职时间</td>
-                                <td th:text="${emp.staff}">职务</td>
-                                <td th:text="${emp.employeeMessage}">备注信息</td>
-                                <td>
-                                    <a th:href="@{/employee/toUpdateEmployee(employeeAccount=${emp.employeeAccount})}"
-                                       style="text-decoration: none">
-                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">
-                                    </a>
-                                    <a th:href="@{/employee/delEmployee(employeeAccount=${emp.employeeAccount})}"
-                                       style="text-decoration: none">
-                                        <input type="button" class="btn btn-sm btn-outline-danger"
-                                               onclick="return del()" value="解雇">
-                                    </a>
-                                </td>
-                            </tr>
+<!--                            <tr th:each="emp:${employeeList}">-->
+<!--                                <td th:text="${emp.employeeAccount}">工号</td>-->
+<!--                                <td th:text="${emp.employeeName}">姓名</td>-->
+<!--                                <td th:text="${emp.employeeGender}">性别</td>-->
+<!--                                <td th:text="${emp.employeeAge}">年龄</td>-->
+<!--                                <td th:text="${emp.entryTime}">入职时间</td>-->
+<!--                                <td th:text="${emp.staff}">职务</td>-->
+<!--                                <td th:text="${emp.employeeMessage}">备注信息</td>-->
+<!--                                <td>-->
+<!--                                    <a th:href="@{/employee/toUpdateEmployee(employeeAccount=${emp.employeeAccount})}"-->
+<!--                                       style="text-decoration: none">-->
+<!--                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">-->
+<!--                                    </a>-->
+<!--                                    <a th:href="@{/employee/delEmployee(employeeAccount=${emp.employeeAccount})}"-->
+<!--                                       style="text-decoration: none">-->
+<!--                                        <input type="button" class="btn btn-sm btn-outline-danger"-->
+<!--                                               onclick="return del()" value="解雇">-->
+<!--                                    </a>-->
+<!--                                </td>-->
+<!--                            </tr>-->
                             </tbody>
                         </table>
                     </div>

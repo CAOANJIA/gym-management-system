@@ -23,10 +23,16 @@
                     <form th:action="@{/member/addMember}" method="post" name="addForm"
                           onsubmit="return beforeSubmit(this)">
                         <table class="table table-hover">
+<!--                            <tr>-->
+<!--                                <td text-align="center">会员账号/卡号：</td>-->
+<!--                                <td><input type="text" class="form-control" placeholder="卡号由系统自动生成" name="memberAccount"-->
+<!--                                           disabled="disabled">-->
+<!--                                </td>-->
+<!--                            </tr>-->
                             <tr>
-                                <td text-align="center">会员账号/卡号：</td>
-                                <td><input type="text" class="form-control" placeholder="卡号由系统自动生成" name="memberAccount"
-                                           disabled="disabled">
+                                <td text-align="center">编号：</td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="编号" name="">
                                 </td>
                             </tr>
                             <tr>
@@ -35,39 +41,57 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td text-align="center">密码：</td>
-                                <td><input type="text" class="form-control" placeholder="初始密码123456"
-                                           name="memberPassword" disabled="disabled">
-                                </td>
-                            </tr>
-                            <tr>
                                 <td text-align="center">性别：</td>
                                 <td><input type="text" class="form-control" placeholder="性别" name="memberGender">
                                 </td>
                             </tr>
                             <tr>
-                                <td text-align="center">年龄：</td>
-                                <td><input type="text" class="form-control" placeholder="年龄" name="memberAge">
+                                <td text-align="center">账号：</td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="账号" name="">
                                 </td>
                             </tr>
                             <tr>
-                                <td text-align="center">联系方式：</td>
+                                <td text-align="center">密码：</td>
+                                <td><input type="text" class="form-control" placeholder="初始密码123456"
+                                           name="memberPassword" disabled="disabled">
+                                </td>
+                            </tr>
+<!--                            <tr>-->
+<!--                                <td text-align="center">年龄：</td>-->
+<!--                                <td><input type="text" class="form-control" placeholder="年龄" name="memberAge">-->
+<!--                                </td>-->
+<!--                            </tr>-->
+                            <tr>
+                                <td text-align="center">电话：</td>
                                 <td><input type="text" class="form-control" placeholder="11位手机号" name="memberPhone">
                                 </td>
                             </tr>
                             <tr>
-                                <td text-align="center">身高：</td>
-                                <td><input type="text" class="form-control" placeholder="cm" name="memberHeight">
+                                <td text-align="center">积分：</td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="积分" name="">
                                 </td>
                             </tr>
+<!--                            <tr>-->
+<!--                                <td text-align="center">身高：</td>-->
+<!--                                <td><input type="text" class="form-control" placeholder="cm" name="memberHeight">-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td text-align="center">体重：</td>-->
+<!--                                <td><input type="text" class="form-control" placeholder="kg" name="memberWeight">-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td text-align="center">购买课时：</td>-->
+<!--                                <td><input type="text" class="form-control" placeholder="购买课时" name="cardClass">-->
+<!--                                </td>-->
+<!--                            </tr>-->
                             <tr>
-                                <td text-align="center">体重：</td>
-                                <td><input type="text" class="form-control" placeholder="kg" name="memberWeight">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td text-align="center">购买课时：</td>
-                                <td><input type="text" class="form-control" placeholder="购买课时" name="cardClass">
+                                <td text-align="center">备注：</td>
+                                <td>
+                                    <input type="text" class="form-control" placeholder="备注" name="">
                                 </td>
                             </tr>
                         </table>
