@@ -24,36 +24,47 @@
                     <div class="card-body">
                         <table id="datatablesSimple">
                             <thead>
+<!--                            <tr>-->
+<!--                                <th>器材id</th>-->
+<!--                                <th>名称</th>-->
+<!--                                <th>位置</th>-->
+<!--                                <th>状态</th>-->
+<!--                                <th>备注信息</th>-->
+<!--                                <th>操作</th>-->
+<!--                            </tr>-->
                             <tr>
-                                <th>器材id</th>
-                                <th>名称</th>
-                                <th>位置</th>
-                                <th>状态</th>
-                                <th>备注信息</th>
-                                <th>操作</th>
+                                <th>器材编号</th>
+                                <th>器材名称</th>
+                                <th>器材说明</th>
+                                <th>器材数量</th>
+                                <th>购入时间</th>
+                                <th>上次检修时间</th>
+                                <th>有效期</th>
+                                <th>使用说明</th>
+                                <th>备注</th>
                             </tr>
                             </thead>
 
-                            <tbody>
-                            <tr th:each="equ:${equipmentList}">
-                                <td th:text="${equ.equipmentId}">id</td>
-                                <td th:text="${equ.equipmentName}">name</td>
-                                <td th:text="${equ.equipmentLocation}">location</td>
-                                <td th:text="${equ.equipmentStatus}">status</td>
-                                <td th:text="${equ.equipmentMessage}">message</td>
-                                <td>
-                                    <a th:href="@{/equipment/toUpdateEquipment(equipmentId=${equ.equipmentId})}"
-                                       style="text-decoration: none">
-                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">
-                                    </a>
-                                    <a th:href="@{/equipment/delEquipment(equipmentId=${equ.equipmentId})}"
-                                       style="text-decoration: none">
-                                        <input type="button" class="btn btn-sm btn-outline-danger"
-                                               onclick="return del()" value="删除">
-                                    </a>
-                                </td>
-                            </tr>
-                            </tbody>
+<!--                            <tbody>-->
+<!--                            <tr th:each="equ:${equipmentList}">-->
+<!--                                <td th:text="${equ.equipmentId}">id</td>-->
+<!--                                <td th:text="${equ.equipmentName}">name</td>-->
+<!--                                <td th:text="${equ.equipmentLocation}">location</td>-->
+<!--                                <td th:text="${equ.equipmentStatus}">status</td>-->
+<!--                                <td th:text="${equ.equipmentMessage}">message</td>-->
+<!--                                <td>-->
+<!--                                    <a th:href="@{/equipment/toUpdateEquipment(equipmentId=${equ.equipmentId})}"-->
+<!--                                       style="text-decoration: none">-->
+<!--                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">-->
+<!--                                    </a>-->
+<!--                                    <a th:href="@{/equipment/delEquipment(equipmentId=${equ.equipmentId})}"-->
+<!--                                       style="text-decoration: none">-->
+<!--                                        <input type="button" class="btn btn-sm btn-outline-danger"-->
+<!--                                               onclick="return del()" value="删除">-->
+<!--                                    </a>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            </tbody>-->
                         </table>
                     </div>
                 </div>
