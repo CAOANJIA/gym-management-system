@@ -3,21 +3,13 @@
 <head th:replace="adminCommon::common-header">
 
 </head>
-<body class="sb-nav-fixed">
-<nav th:replace="adminCommon::common-navbar"></nav>
-<div id="layoutSidenav">
-    <div th:replace="adminCommon::common-sidenav"></div>
+<body class="bg-primary" th:style="'background-image: url(/img/background.jpeg);background-size: 100%, 100%'">
 
-    <div id="layoutSidenav_content">
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
         <main>
-            <div class="container-fluid px-4">
-                <h1 class="mt-4">添加会员</h1>
-
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
-                    <li class="breadcrumb-item"><a th:href="@{/member/selMember}">会员管理</a></li>
-                    <li class="breadcrumb-item active">添加会员</li>
-                </ol>
+            <div class="container">
+                <h1 class="text-center font-weight-light my-4" style="color:white;">添加会员</h1>
 
                 <div class="card mb-4">
                     <form th:action="@{/member/addMember}" method="post" name="addForm"
@@ -96,7 +88,7 @@
                             </tr>
                         </table>
                         <div style="text-align:center;margin-top:20px;margin-bottom:20px">
-                            <input type="submit" class="btn btn-outline-success" value="添加">
+                            <input type="submit" class="btn btn-outline-success" value="注册">
                         </div>
                     </form>
                 </div>

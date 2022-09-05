@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -40,10 +41,10 @@ public class MemberController {
 
     //新增会员
     @RequestMapping("/addMember")
-    public String addMember(Member member) {
+    public String addMember(Member member,Model model, HttpSession session) {
         //会员账号&卡号随机生成
         Random random = new Random();
-        String account1 = "2021";
+        String account1 = "2022";
         for (int i = 0; i < 5; i++) {
             account1 += random.nextInt(10);
         }
@@ -66,7 +67,10 @@ public class MemberController {
 
         memberService.insertMember(member);
 
-        return "redirect:selMember";
+        session.setAttribute("member","注册成功,账号为:"+account);
+        model.addAttribute("member","注册成功,账号为:"+account);
+
+        return "/userLogin";
 
     }
 

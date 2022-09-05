@@ -7,7 +7,7 @@
     <meta name="description" content="gym-management-system"/>
     <meta name="author" content="ZhangMing"/>
     <title>健身房管理系统-会员登录</title>
-    <link href="/static/css/styles.css" th:href="@{css/styles.css}" rel="stylesheet"/>
+    <link href="/static/css/styles.css" th:href="@{~/css/styles.css}" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
             crossorigin="anonymous"></script>
     <script type="text/javascript">
@@ -56,12 +56,17 @@
                                                value=""/>
                                         <label class="form-check-label" for="inputRememberPassword">记住密码</label>
                                     </div>
+
                                     <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                         <input type="submit" class="btn btn-success" value="登录">
+                                        <a class="btn btn-primary" th:href="@{/member/toAddMember}">注册</a>
                                         <a class="btn btn-primary" th:href="@{/}">转到管理员登录</a>
                                     </div>
                                 </form>
+                                <div th:text="${member}" style="margin-top: 20px;text-align: center;color: #464646"></div>
                                 <div th:text="${msg}" style="margin-top: 20px;text-align: center;color: red"></div>
+
+<!--                                <div th:text="${acc.memberAccount}" style="margin-top: 20px;text-align: center;color: red"></div>-->
                             </div>
                         </div>
                     </div>

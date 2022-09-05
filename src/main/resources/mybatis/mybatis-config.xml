@@ -3,7 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!--测试时使用-->
-<!--
 <configuration>
     <typeAliases>
         <package name="com.milotnt.pojo"/>
@@ -16,7 +15,7 @@
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://localhost:3306/gym_management_system"/>
                 <property name="username" value="root"/>
-                <property name="password" value="12345678"/>
+                <property name="password" value="wuchenglin2001"/>
             </dataSource>
         </environment>
     </environments>
@@ -29,4 +28,4 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 
-</configuration>-->
+</configuration>
