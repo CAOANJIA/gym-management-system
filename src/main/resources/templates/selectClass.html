@@ -35,24 +35,24 @@
                             </thead>
 
                             <tbody>
-                            <tr th:each="class:${classList}">
-                                <td th:text="${class.classId}">编号</td>
-                                <td th:text="${class.className}">名称</td>
-                                <td th:text="${class.classBegin}">时间</td>
-                                <td th:text="${class.classTime}">时长</td>
-                                <td th:text="${class.coach}">教练</td>
-                                <td>
-                                    <a th:href="@{/class/selClassOrder(classId=${class.classId})}"
-                                       style="text-decoration: none">
-                                        <input type="button" class="btn btn-sm btn-outline-secondary" value="报名信息">
-                                    </a>
-                                    <a th:href="@{/class/delClass(classId=${class.classId})}"
-                                       style="text-decoration: none">
-                                        <input type="button" class="btn btn-sm btn-outline-danger"
-                                               onclick="return del()" value="删除">
-                                    </a>
-                                </td>
-                            </tr>
+<!--                            <tr th:each="class:${classList}">-->
+<!--                                <td th:text="${class.classId}">编号</td>-->
+<!--                                <td th:text="${class.className}">名称</td>-->
+<!--                                <td th:text="${class.classBegin}">时间</td>-->
+<!--                                <td th:text="${class.classTime}">时长</td>-->
+<!--                                <td th:text="${class.coach}">教练</td>-->
+<!--                                <td>-->
+<!--                                    <a th:href="@{/class/selClassOrder(classId=${class.classId})}"-->
+<!--                                       style="text-decoration: none">-->
+<!--                                        <input type="button" class="btn btn-sm btn-outline-secondary" value="报名信息">-->
+<!--                                    </a>-->
+<!--                                    <a th:href="@{/class/delClass(classId=${class.classId})}"-->
+<!--                                       style="text-decoration: none">-->
+<!--                                        <input type="button" class="btn btn-sm btn-outline-danger"-->
+<!--                                               onclick="return del()" value="删除">-->
+<!--                                    </a>-->
+<!--                                </td>-->
+<!--                            </tr>-->
                             </tbody>
                         </table>
                     </div>
