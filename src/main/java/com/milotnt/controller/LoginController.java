@@ -42,6 +42,12 @@ public class LoginController {
         return "userLogin";
     }
 
+    @RequestMapping("/toUserLoginInit")
+    public String toUserLoginInit(Member member,Model model, HttpSession session) {
+//        model.addAttribute("member", member);
+        return "userLogin";
+    }
+
     //管理员登录
     @RequestMapping("/adminLogin")
     public String adminLogin(Admin admin, Model model, HttpSession session) {
@@ -107,5 +113,6 @@ public class LoginController {
         model.addAttribute("member", member);
         return "userMain";
     }
+
 
 }
