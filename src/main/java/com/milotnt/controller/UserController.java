@@ -12,7 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author ZhangMing [1157038410@qq.com]
@@ -39,6 +42,44 @@ public class UserController {
         Member member = (Member) session.getAttribute("user");
         model.addAttribute("member", member);
         return "userInformation";
+    }
+
+    //跳转个人留言页面
+    @RequestMapping("/toUserMessage")
+    public String toUserMessage(Model model, HttpSession session) {
+        Member member = (Member) session.getAttribute("user");
+        model.addAttribute("member", member);
+        return "userMessage";
+    }
+
+    //跳转新增留言页面
+    @RequestMapping("/toAddMessage")
+    public String toMessage() {
+        return "addMessage";
+    }
+
+    //添加留言界面
+    @RequestMapping("/addMessage")
+    public String toAddMessage(Model model, HttpSession session) {
+        //工号随机生成
+//        Random random = new Random();
+//        String account1 = "1010";
+//        for (int i = 0; i < 5; i++) {
+//            account1 += random.nextInt(10);
+//        }
+//        Integer account = Integer.parseInt(account1);
+//
+//        //获取当前日期
+//        Date date = new Date();
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//        String nowDay = simpleDateFormat.format(date);
+//
+//        employee.setEmployeeAccount(account);
+//        employee.setEntryTime(nowDay);
+//
+//        employeeService.insertEmployee(employee);
+
+        return "redirect:toUserMessage";
     }
 
     //跳转修改个人信息页面
@@ -115,4 +156,25 @@ public class UserController {
         return "redirect:toUserClass";
     }
 
+    //跳转会员业务页面
+    @RequestMapping("/toUserBusiness")
+    public String toUserBusiness(Model model, HttpSession session) {
+        Member member = (Member) session.getAttribute("user");
+        model.addAttribute("member", member);
+        return "userBusiness";
+    }
+
+    //会员充值
+    @RequestMapping("/updateBusiness")
+    public String updateUserBusiness(HttpSession session, Member member) {
+        Member member1 = (Member) session.getAttribute("user");
+
+        member.setMemberAccount(member1.getMemberAccount());
+        member.setCardClass(member1.getCardClass());
+        member.setCardTime(member1.getCardTime());
+        member.setCardNextClass(member1.getCardNextClass());
+
+//        memberService.updateMemberByMemberAccount(member);
+        return "userBusiness";
+    }
 }

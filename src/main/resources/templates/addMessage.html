@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="userCommon::common-header">
+
+</head>
+<body class="sb-nav-fixed">
+<nav th:replace="userCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="userCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">添加留言</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/user/toUserMessage}">个人留言</a></li>
+                    <li class="breadcrumb-item active">添加留言</li>
+                </ol>
+
+                <div class="card mb-4">
+
+                    <form th:action="@{/user/addMessage}" method="post" name="addForm"
+                          onsubmit="return beforeSubmit(this)">
+                        <table class="table table-hover">
+                            <tr>
+                                <td text-align="center">留言编号：</td>
+                                <td><input type="text" class="form-control" placeholder="留言编号由系统自动生成" name="userMessageAccount"
+                                           disabled="disabled">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td text-align="center">留言用户姓名：</td>
+                                <td><input type="text" class="form-control" placeholder="王陆毅" name="userMessageName"
+                                           disabled="disabled">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">留言内容</td>
+                                <td><input type="text" class="form-control" placeholder="留言内容" name="userMessageContent">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">留言时间</td>
+                                <td><input type="text" class="form-control" placeholder="留言时间由系统自动生成" name="userMessageTime"
+                                           disabled="disabled">
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="text-align:center;margin-top:20px;margin-bottom:20px">
+                            <input type="submit" class="btn btn-outline-success" value="添加">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="userCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="userCommon::common-scripts"></div>
+<script type="text/javascript">
+    function beforeSubmit(addForm) {
+        if (addForm.userMessageContent == "") {
+            alert("请输入留言内容！")
+            return false;
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
