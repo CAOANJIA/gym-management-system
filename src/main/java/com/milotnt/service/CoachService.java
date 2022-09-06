@@ -1,6 +1,6 @@
 package com.milotnt.service;
 
-import com.milotnt.pojo.Employee;
+import com.milotnt.pojo.Coach;
 
 import java.util.List;
 
@@ -9,22 +9,22 @@ import java.util.List;
  * @date 2021/8/11
  */
 
-public interface EmployeeService {
+public interface CoachService {
 
     //查询所有员工
-    List<Employee> findAll();
+    List<Coach> findAll();
 
     //根据员工账号删除员工
-    Boolean deleteByEmployeeAccount(Integer employeeAccount);
+    Boolean deleteByCoachAccount(Integer trAc);
 
     //添加新员工
-    Boolean insertEmployee(Employee employee);
+    Boolean insertCoach(Coach coach);
 
     //根据员工账号修改会员信息
-    Boolean updateMemberByEmployeeAccount(Employee employee);
+    Boolean updateMemberByCoachAccount(Coach coach);
 
     //根据员工账号查询员工
-    List<Employee> selectByEmployeeAccount(Integer employeeAccount);
+    List<Coach> selectByCoachAccount(Integer trAc);
 
     //查询员工数
     Integer selectTotalCount();

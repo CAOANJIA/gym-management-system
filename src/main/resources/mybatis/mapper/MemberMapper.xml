@@ -16,13 +16,18 @@
 
     <update id="updateMemberByMemberAccount" parameterType="member">
         UPDATE user
-        SET userAc          = #{userAc},
+        SET userId          = #{userId},
+            userAc          = #{userAc},
             userPw          = #{userPw},
             userName        = #{userName},
             userGender      = #{userGender},
             userPh          = #{userPh},
+            userPt          = #{userPt},
             insertTime      = #{insertTime},
-            updateTime      = #{updateTime}
+            updateTime      = #{updateTime},
+            startTime       = #{startTime},
+            endTime         = #{endTime},
+            remarks         = #{remarks}
         WHERE userAc = #{userAc}
     </update>
 

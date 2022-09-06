@@ -24,64 +24,70 @@
                         <div th:each="mem:${memberList}">
                             <table class="table table-hover">
                                 <tr>
-                                    <td text-align="center">会员账号/卡号：</td>
+                                    <td text-align="center">编号：</td>
                                     <td><input type="text" class="form-control" readonly="readonly"
-                                               th:value="${mem.memberAccount}" name="memberAccount">
+                                               th:value="${mem.userId}" name="userId">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td text-align="center">姓名：</td>
-                                    <td><input type="text" class="form-control" th:value="${mem.memberName}"
-                                               name="memberName"></td>
-                                </tr>
-                                <tr>
-                                    <td text-align="center">密码：</td>
-                                    <td><input type="text" class="form-control" readonly="readonly"
-                                               th:value="${mem.memberPassword}" name="memberPassword">
-                                    </td>
+                                    <td><input type="text" class="form-control" th:value="${mem.userName}"
+                                               name="userName"></td>
                                 </tr>
                                 <tr>
                                     <td text-align="center">性别：</td>
-                                    <td><input type="text" class="form-control" th:value="${mem.memberGender}"
-                                               name="memberGender">
+                                    <td><input type="text" class="form-control" th:value="${mem.userGender}"
+                                               name="userGender"></td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">账号：</td>
+                                    <td><input type="text" class="form-control" readonly="readonly"
+                                               th:value="${mem.userAc}" name="userAc">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">年龄：</td>
-                                    <td><input type="text" class="form-control" th:value="${mem.memberAge}"
-                                               name="memberAge">
+                                    <td text-align="center">密码：</td>
+                                    <td><input type="text" class="form-control" th:value="${mem.userPw}"
+                                               name="userPw">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">联系方式：</td>
-                                    <td><input type="text" class="form-control" th:value="${mem.memberPhone}"
-                                               name="memberPhone">
+                                    <td text-align="center">电话：</td>
+                                    <td><input type="text" class="form-control" th:value="${mem.userPh}"
+                                               name="userPh">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">身高：</td>
-                                    <td><input type="text" class="form-control" th:value="${mem.memberHeight}"
-                                               name="memberHeight">
+                                    <td text-align="center">积分：</td>
+                                    <td><input type="text" class="form-control" th:value="${mem.userPt}"
+                                               name="userPt">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">体重：</td>
-                                    <td><input type="text" class="form-control" th:value="${mem.memberWeight}"
-                                               name="memberWeight">
+                                    <td text-align="center">插入时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${mem.insertTime}"
+                                               name="insertTime">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">购买课时：</td>
-                                    <td><input type="text" class="form-control" th:value="${mem.cardClass}"
-                                               name="cardClass">
+                                    <td text-align="center">开始时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${mem.startTime}"
+                                               name="startTime">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">剩余课时：</td>
-                                    <td><input type="text" class="form-control" th:value="${mem.cardNextClass}"
-                                               name="cardNextClass">
+                                    <td text-align="center">结束时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${mem.endTime}"
+                                               name="endTime">
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td text-align="center">备注：</td>
+                                    <td><input type="text" class="form-control" th:value="${mem.remarks}"
+                                               name="remarks">
+                                    </td>
+                                </tr>
+
                             </table>
                             <div style="text-align:center;margin-bottom:15px">
                                 <input type="submit" class="btn btn-outline-success" value="确认修改">

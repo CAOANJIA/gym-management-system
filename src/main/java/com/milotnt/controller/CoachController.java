@@ -1,7 +1,7 @@
 package com.milotnt.controller;
 
-import com.milotnt.pojo.Employee;
-import com.milotnt.service.EmployeeService;
+import com.milotnt.pojo.Coach;
+import com.milotnt.service.CoachService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,28 +19,28 @@ import java.util.Random;
 
 @Controller
 @RequestMapping("/employee")
-public class EmployeeController {
+public class CoachController {
 
     @Autowired
-    private EmployeeService employeeService;
+    private CoachService coachService;
 
     //查询员工
     @RequestMapping("/selEmployee")
-    public String selectEmployee(Model model) {
-        List<Employee> employeeList = employeeService.findAll();
-        model.addAttribute("employeeList", employeeList);
+    public String selectCoach(Model model) {
+        List<Coach> coachList = coachService.findAll();
+        model.addAttribute("coachList", coachList);
         return "selectEmployee";
     }
 
     //跳转新增员工页面
     @RequestMapping("/toAddEmployee")
-    public String toAddEmployee() {
+    public String toAddCoach() {
         return "addEmployee";
     }
 
     //新增员工
     @RequestMapping("/addEmployee")
-    public String addEmployee(Employee employee) {
+    public String addEmployee(Coach coach) {
         //工号随机生成
         Random random = new Random();
         String account1 = "1010";
@@ -54,10 +54,12 @@ public class EmployeeController {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String nowDay = simpleDateFormat.format(date);
 
-        employee.setEmployeeAccount(account);
-        employee.setEntryTime(nowDay);
+        coach.setTrAc(account);
+        coach.setInsertTime(nowDay);
+        coach.setUpdateTime(nowDay);
+        coach.setTrId(account);
 
-        employeeService.insertEmployee(employee);
+        coachService.insertCoach(coach);
 
         return "redirect:selEmployee";
 
@@ -65,23 +67,33 @@ public class EmployeeController {
 
     //删除员工
     @RequestMapping("/delEmployee")
-    public String deleteEmployee(Integer employeeAccount) {
-        employeeService.deleteByEmployeeAccount(employeeAccount);
+    public String deleteCoach(Integer trAc) {
+        coachService.deleteByCoachAccount(trAc);
         return "redirect:selEmployee";
     }
 
     //跳转员工修改页面
     @RequestMapping("/toUpdateEmployee")
-    public String toUpdateEmployee(Integer employeeAccount, Model model) {
-        List<Employee> employeeList = employeeService.selectByEmployeeAccount(employeeAccount);
-        model.addAttribute("employeeList", employeeList);
+    public String toUpdateCoach(Integer trAc, Model model) {
+        List<Coach> coachList = coachService.selectByCoachAccount(trAc);
+        model.addAttribute("coachList", coachList);
+//        model.addAttribute("employeeList", coachList);
         return "updateEmployee";
     }
 
     //修改员工信息
     @RequestMapping("/updateEmployee")
-    public String updateEmployee(Employee employee) {
-        employeeService.updateMemberByEmployeeAccount(employee);
+    public String updateCoach(Coach coach) {
+
+        //获取当前时间
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String nowDay = simpleDateFormat.format(date);
+        coach.setUpdateTime(nowDay);
+
+        coachService.updateMemberByCoachAccount(coach);
+
+//        employeeService.updateMemberByEmployeeAccount(employee);
         return "redirect:selEmployee";
     }
 
