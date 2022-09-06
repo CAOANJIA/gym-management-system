@@ -5,10 +5,6 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/10
- */
 
 @Mapper
 public interface MemberMapper {
@@ -17,7 +13,7 @@ public interface MemberMapper {
     List<Member> findAll();
 
     //新增会员信息
-    Boolean insertMember(Member member);
+    Boolean insertUser(Member member);
 
     //根据会员账号修改会员信息
     Boolean updateMemberByMemberAccount(Member member);

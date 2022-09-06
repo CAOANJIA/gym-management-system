@@ -15,7 +15,7 @@ public interface MemberService {
     List<Member> findAll();
 
     //新增会员信息
-    Boolean insertMember(Member member);
+    Boolean insertUser(Member user);
 
     //根据会员账号修改会员信息
     Boolean updateMemberByMemberAccount(Member member);

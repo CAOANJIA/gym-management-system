@@ -9,27 +9,21 @@
         FROM member
     </select>
 
-    <insert id="insertMember" parameterType="member">
-        INSERT INTO member (member_account, member_name, member_gender, member_age, member_height,
-                            member_weight, member_phone, card_time, card_class,
-                            card_next_class)
-        VALUES (#{memberAccount}, #{memberName}, #{memberGender}, #{memberAge}, #{memberHeight},
-                #{memberWeight}, #{memberPhone}, #{cardTime}, #{cardClass}, #{cardNextClass})
+    <insert id="insertUser" parameterType="member">
+        INSERT INTO user (userAc, userName, userGender,userPh,userPt,insertTime, updateTime,remarks)
+        VALUES (#{userAc}, #{userName}, #{userGender}, #{userPh},#{userPt},#{insertTime},#{updateTime},#{remarks})
     </insert>
 
     <update id="updateMemberByMemberAccount" parameterType="member">
-        UPDATE member
-        SET member_account  = #{memberAccount},
-            member_password = #{memberPassword},
-            member_name     = #{memberName},
-            member_gender   = #{memberGender},
-            member_age      = #{memberAge},
-            member_height   = #{memberHeight},
-            member_weight   = #{memberWeight},
-            member_phone    = #{memberPhone},
-            card_class      = #{cardClass},
-            card_next_class = #{cardNextClass}
-        WHERE member_account = #{memberAccount}
+        UPDATE user
+        SET userAc          = #{userAc},
+            userPw          = #{userPw},
+            userName        = #{userName},
+            userGender      = #{userGender},
+            userPh          = #{userPh},
+            insertTime      = #{insertTime},
+            updateTime      = #{updateTime}
+        WHERE userAc = #{userAc}
     </update>
 
     <select id="selectByAccountAndPassword" resultType="member">
