@@ -8,11 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/11
- */
-
 @Service
 public class EquipmentServiceImpl implements EquipmentService {
 
@@ -25,8 +20,8 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public Boolean deleteByEquipmentId(Integer equipmentId) {
-        return equipmentMapper.deleteByEquipmentId(equipmentId);
+    public Boolean deleteByeqId(Integer eqId) {
+        return equipmentMapper.deleteByeqId(eqId);
     }
 
     @Override
@@ -35,13 +30,13 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public Boolean updateEquipmentByEquipmentId(Equipment equipment) {
-        return equipmentMapper.updateEquipmentByEquipmentId(equipment);
+    public Boolean updateEquipmentByeqId(Equipment equipment) {
+        return equipmentMapper.updateEquipmentByeqId(equipment);
     }
 
     @Override
-    public List<Equipment> selectByEquipmentId(Integer equipmentId) {
-        return equipmentMapper.selectByEquipmentId(equipmentId);
+    public List<Equipment> selectByeqId(Integer eqId) {
+        return equipmentMapper.selectByeqId(eqId);
     }
 
     @Override

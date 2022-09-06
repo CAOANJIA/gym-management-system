@@ -47,17 +47,17 @@
 
 <!--                            <tbody>-->
 <!--                            <tr th:each="equ:${equipmentList}">-->
-<!--                                <td th:text="${equ.equipmentId}">id</td>-->
-<!--                                <td th:text="${equ.equipmentName}">name</td>-->
-<!--                                <td th:text="${equ.equipmentLocation}">location</td>-->
-<!--                                <td th:text="${equ.equipmentStatus}">status</td>-->
-<!--                                <td th:text="${equ.equipmentMessage}">message</td>-->
+<!--                                <td th:text="${equ.eqId}">id</td>-->
+<!--                                <td th:text="${equ.eqName}">name</td>-->
+<!--                                <td th:text="${equ.eqIns}">location</td>-->
+<!--                                <td th:text="${equ.eqNumber}">status</td>-->
+<!--                                <td th:text="${equ.insertTime}">message</td>-->
 <!--                                <td>-->
-<!--                                    <a th:href="@{/equipment/toUpdateEquipment(equipmentId=${equ.equipmentId})}"-->
+<!--                                    <a th:href="@{/equipment/toUpdateEquipment(eqId=${equ.eqId})}"-->
 <!--                                       style="text-decoration: none">-->
 <!--                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">-->
 <!--                                    </a>-->
-<!--                                    <a th:href="@{/equipment/delEquipment(equipmentId=${equ.equipmentId})}"-->
+<!--                                    <a th:href="@{/equipment/delEquipment(eqId=${equ.eqId})}"-->
 <!--                                       style="text-decoration: none">-->
 <!--                                        <input type="button" class="btn btn-sm btn-outline-danger"-->
 <!--                                               onclick="return del()" value="删除">-->
@@ -65,6 +65,30 @@
 <!--                                </td>-->
 <!--                            </tr>-->
 <!--                            </tbody>-->
+                            <tbody>
+                            <tr th:each="equ:${equipmentList}">
+                                <td th:text="${equ.eqId}">id</td>
+                                <td th:text="${equ.eqName}">name</td>
+                                <td th:text="${equ.eqIns}">location</td>
+                                <td th:text="${equ.eqNumber}">status</td>
+                                <td th:text="${equ.insertTime}">message</td>
+                                <td th:text="${equ.updateTime}">message</td>
+                                <td th:text="${equ.expiryTime}">message</td>
+                                <td th:text="${equ.instruction}">message</td>
+                                <td th:text="${equ.remarks}">message</td>
+                                <td>
+                                    <a th:href="@{/equipment/toUpdateEquipment(eqId=${equ.eqId})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">
+                                    </a>
+                                    <a th:href="@{/equipment/delEquipment(eqId=${equ.eqId})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-danger"
+                                               onclick="return del()" value="删除">
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
