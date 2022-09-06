@@ -8,10 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/11
- */
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -25,8 +21,8 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Boolean insertMember(Member member) {
-        return memberMapper.insertMember(member);
+    public Boolean insertUser(Member user) {
+        return memberMapper.insertUser(user);
     }
 
     @Override
