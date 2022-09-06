@@ -3,15 +3,69 @@ package com.milotnt.pojo;
 
 public class Member {
 
-    private Integer userAc;
-    private String userPw;
+    private Integer userId;
     private String userName;
     private String userGender;
+    private Integer userAc;
+    private String userPw;
     private Long userPh;
     private Integer userPt;
     private String insertTime;
     private  String updateTime;
+    private String startTime;
+    private  String endTime;
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", userGender='" + userGender + '\'' +
+                ", userAc=" + userAc +
+                ", userPw='" + userPw + '\'' +
+                ", userPh=" + userPh +
+                ", userPt=" + userPt +
+                ", insertTime='" + insertTime + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", remarks='" + remarks + '\'' +
+                '}';
+    }
+
+    public Integer getUserPt() {
+        return userPt;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
     private String remarks;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public void setUserPt(Integer userPt) {
+        this.userPt = userPt;
+    }
 
     public String getRemarks() {
         return remarks;
@@ -20,32 +74,6 @@ public class Member {
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
-
-    @Override
-    public String toString() {
-        return "Member{" +
-                "userAc=" + userAc +
-                ", userPw='" + userPw + '\'' +
-                ", userName='" + userName + '\'' +
-                ", userGender='" + userGender + '\'' +
-                ", userPh=" + userPh +
-                ", userPt=" + userPt +
-                ", remarks='" + remarks + '\'' +
-                ", insertTime='" + insertTime + '\'' +
-                ", updateTime='" + updateTime + '\'' +
-                '}';
-    }
-
-    public int getUserPt() {
-        return userPt;
-    }
-
-    public void setUserPt(int userPt) {
-        this.userPt = userPt;
-    }
-
-
-
 
     public void setUserAc(Integer userAc) {
         this.userAc = userAc;

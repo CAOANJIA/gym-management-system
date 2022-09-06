@@ -6,12 +6,12 @@
 
     <select id="findAll" resultType="member">
         SELECT *
-        FROM member
+        FROM user
     </select>
 
     <insert id="insertUser" parameterType="member">
-        INSERT INTO user (userAc, userName, userGender,userPh,userPt,insertTime, updateTime,remarks)
-        VALUES (#{userAc}, #{userName}, #{userGender}, #{userPh},#{userPt},#{insertTime},#{updateTime},#{remarks})
+        INSERT INTO user (userId, userAc, userName, userGender, userPh, userPt, userPw, insertTime, updateTime, startTime, endTime, remarks)
+        VALUES (#{userId},#{userAc}, #{userName}, #{userGender}, #{userPh},#{userPt}, #{userPw}, #{insertTime},#{updateTime}, #{startTime}, #{endTime}, #{remarks})
     </insert>
 
     <update id="updateMemberByMemberAccount" parameterType="member">
@@ -28,26 +28,26 @@
 
     <select id="selectByAccountAndPassword" resultType="member">
         SELECT *
-        FROM member
-        WHERE member_account = #{memberAccount}
-          AND member_password = #{memberPassword}
+        FROM user
+        WHERE userAc = #{userAc}
+          AND userPw = #{userPw}
     </select>
 
     <delete id="deleteByMemberAccount" parameterType="java.lang.Integer">
         DELETE
-        FROM member
-        WHERE member_account = #{memberAccount}
+        FROM user
+        WHERE userAc = #{userAc}
     </delete>
 
     <select id="selectTotalCount" resultType="java.lang.Integer">
         SELECT count(*)
-        FROM member
+        FROM user
     </select>
 
     <select id="selectByMemberAccount" parameterType="java.lang.Integer" resultType="member">
         SELECT *
-        FROM member
-        WHERE member_account = #{memberAccount}
+        FROM user
+        WHERE userAc = #{userAc}
     </select>
 
 </mapper>

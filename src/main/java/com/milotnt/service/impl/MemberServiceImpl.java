@@ -21,8 +21,8 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Boolean insertUser(Member user) {
-        return memberMapper.insertUser(user);
+    public Boolean insertUser(Member member) {
+        return memberMapper.insertUser(member);
     }
 
     @Override
