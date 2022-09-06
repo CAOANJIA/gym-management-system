@@ -20,41 +20,65 @@
                 <div class="card mb-4">
 
                     <form th:action="@{/employee/updateEmployee}" method="post">
-                        <div th:each="emp:${employeeList}">
+                        <div th:each="emp:${coachList}">
                             <table class="table table-hover">
                                 <tr>
-                                    <td text-align="center">工号：</td>
+                                    <td text-align="center">编号：</td>
                                     <td><input type="text" class="form-control" readonly="readonly"
-                                               th:value="${emp.employeeAccount}" name="employeeAccount">
+                                               th:value="${emp.trId}" name="trId">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">账号：</td>
+                                    <td><input type="text" class="form-control" readonly="readonly"
+                                               th:value="${emp.trAc}" name="trAc">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td text-align="center">姓名：</td>
-                                    <td><input type="text" class="form-control" th:value="${emp.employeeName}"
-                                               name="employeeName"></td>
+                                    <td><input type="text" class="form-control" th:value="${emp.trName}"
+                                               name="trName"></td>
                                 </tr>
                                 <tr>
                                     <td text-align="center">性别：</td>
-                                    <td><input type="text" class="form-control" th:value="${emp.employeeGender}"
-                                               name="employeeGender">
+                                    <td><input type="text" class="form-control" th:value="${emp.trGender}"
+                                               name="trGender">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">年龄：</td>
-                                    <td><input type="text" class="form-control" th:value="${emp.employeeAge}"
-                                               name="employeeAge">
+                                    <td text-align="center">介绍：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.introduction}"
+                                               name="introduction">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">职务：</td>
-                                    <td><input type="text" class="form-control" th:value="${emp.staff}"
-                                               name="staff">
+                                    <td text-align="center">密码：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.trPw}"
+                                               name="trPw">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">备注信息：</td>
-                                    <td><input type="text" class="form-control" th:value="${emp.employeeMessage}"
-                                               name="employeeMessage">
+                                    <td text-align="center">电话：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.trPh}"
+                                               name="trPh">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">插入时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.insertTime}"
+                                               name="insertTime">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">修改时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.updateTime}"
+                                               name="updateTime">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">备注：</td>
+                                    <td><input type="text" class="form-control" th:value="${emp.remarks}"
+                                               name="remarks">
                                     </td>
                                 </tr>
                             </table>
