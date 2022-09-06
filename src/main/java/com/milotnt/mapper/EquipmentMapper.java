@@ -5,11 +5,6 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/11
- */
-
 @Mapper
 public interface EquipmentMapper {
 
@@ -17,16 +12,16 @@ public interface EquipmentMapper {
     List<Equipment> findAll();
 
     //根据id删除器械
-    Boolean deleteByEquipmentId(Integer equipmentId);
+    Boolean deleteByeqId(Integer eqId);
 
     //添加器材
     Boolean insertEquipment(Equipment equipment);
 
     //根据id修改器械信息
-    Boolean updateEquipmentByEquipmentId(Equipment equipment);
+    Boolean updateEquipmentByeqId(Equipment equipment);
 
     //根据id查询器械
-    List<Equipment> selectByEquipmentId(Integer equipmentId);
+    List<Equipment> selectByeqId(Integer eqId);
 
     //查询器械总数
     Integer selectTotalCount();

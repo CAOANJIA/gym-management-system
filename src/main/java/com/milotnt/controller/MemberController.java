@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
@@ -13,10 +14,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/16
- */
 
 @Controller
 @RequestMapping("/member")
@@ -41,7 +38,7 @@ public class MemberController {
 
     //新增会员
     @RequestMapping("/addMember")
-    public String addMember(Member member,Model model, HttpSession session) {
+    public String addMember(Member user, Model model, HttpSession session) {
         //会员账号&卡号随机生成
         Random random = new Random();
         String account1 = "2022";
@@ -58,17 +55,20 @@ public class MemberController {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String nowDay = simpleDateFormat.format(date);
 
-        Integer nextClass = member.getCardClass();
+        user.setInsertTime(nowDay);
+        user.setUpdateTime(nowDay);
+        user.setUserAc(account);
+        user.setUserPw(password);
+        user.setUserPt(300);
+        user.setUserId(account);
+        user.setStartTime(nowDay);
+        user.setEndTime(nowDay);
 
-        member.setMemberAccount(account);
-        member.setMemberPassword(password);
-        member.setCardTime(nowDay);
-        member.setCardNextClass(nextClass);
+        System.out.println(user);
 
-        memberService.insertMember(member);
+        memberService.insertUser(user);
 
-        session.setAttribute("member","注册成功,账号为:"+account);
-        model.addAttribute("member","注册成功,账号为:"+account);
+        model.addAttribute("account","账号名称:"+user.getUserName()+" 账号:"+user.getUserAc());
 
         return "/userLogin";
 

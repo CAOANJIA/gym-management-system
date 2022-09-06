@@ -24,57 +24,57 @@
                         <table class="table table-hover">
                             <tr>
 <!--                            <td text-align="center">器材名称：</td>-->
-<!--                            <td><input type="text" class="form-control" placeholder="名称" name="equipmentName"></td>-->
+<!--                            <td><input type="text" class="form-control" placeholder="名称" name="eqName"></td>-->
 <!--                        </tr>-->
 
 <!--                            <tr>-->
 <!--                                <td text-align="center">器材位置：</td>-->
-<!--                                <td><input type="text" class="form-control" placeholder="x号房间" name="equipmentLocation">-->
+<!--                                <td><input type="text" class="form-control" placeholder="x号房间" name="eqIns">-->
 <!--                                </td>-->
 <!--                            </tr>-->
 <!--                            <tr>-->
 <!--                                <td text-align="center">器材状态：</td>-->
-<!--                                <td><input type="text" class="form-control" placeholder="状态" name="equipmentStatus">-->
+<!--                                <td><input type="text" class="form-control" placeholder="状态" name="eqNumber">-->
 <!--                                </td>-->
 <!--                            </tr>-->
 <!--                            <tr>-->
 <!--                                <td text-align="center">备注信息：</td>-->
-<!--                                <td><input type="text" class="form-control" placeholder="备注" name="equipmentMessage">-->
+<!--                                <td><input type="text" class="form-control" placeholder="备注" name="insertTime">-->
 <!--                                </td>-->
 <!--                            </tr>-->
 
                             <tr>
                                 <td text-align="center">器材名称：</td>
-                                <td><input type="text" class="form-control" placeholder="器材名称" name="equipmentName"></td>
+                                <td><input type="text" class="form-control" placeholder="器材名称" name="eqName"></td>
                             </tr>
 
                             <tr>
                                 <td text-align="center">器材说明：</td>
-                                <td><input type="text" class="form-control" placeholder="器材说明" name="equipmentLocation"></td>
+                                <td><input type="text" class="form-control" placeholder="器材说明" name="eqIns"></td>
                             </tr>
                             <tr>
                                 <td text-align="center">器材数量：</td>
-                                <td><input type="text" class="form-control" placeholder="器材数量" name="equipmentStatus"></td>
+                                <td><input type="text" class="form-control" placeholder="器材数量" name="eqNumber"></td>
                             </tr>
                             <tr>
                                 <td text-align="center">购入时间：</td>
-                                <td><input type="text" class="form-control" placeholder="购入时间" name="equipmentMessage"></td>
+                                <td><input type="text" class="form-control" placeholder="购入时间" name="insertTime"></td>
                             </tr>
                             <tr>
                                 <td text-align="center">上次检修时间：</td>
-                                <td><input type="text" class="form-control" placeholder="上次检修时间" name="equipmentMessage"></td>
+                                <td><input type="text" class="form-control" placeholder="上次检修时间" name="updateTime"></td>
                             </tr>
                             <tr>
                                 <td text-align="center">有效期：</td>
-                                <td><input type="text" class="form-control" placeholder="有效期" name="equipmentMessage"></td>
+                                <td><input type="text" class="form-control" placeholder="有效期" name="expiryTime"></td>
                             </tr>
                             <tr>
                                 <td text-align="center">使用说明：</td>
-                                <td><input type="text" class="form-control" placeholder="使用说明" name="equipmentMessage"></td>
+                                <td><input type="text" class="form-control" placeholder="使用说明" name="instruction"></td>
                             </tr>
                             <tr>
                                 <td text-align="center">备注：</td>
-                                <td><input type="text" class="form-control" placeholder="备注" name="equipmentMessage"></td>
+                                <td><input type="text" class="form-control" placeholder="备注" name="remarks"></td>
                             </tr>
 
                         </table>
@@ -92,22 +92,39 @@
 <div th:include="adminCommon::common-scripts"></div>
 <script type="text/javascript">
     function beforeSubmit(addForm) {
-        if (addForm.equipmentName.value == "") {
+        if (addForm.eqName.value == "") {
             alert("请输入器材名称！")
             return false;
         }
-        if (addForm.equipmentLocation.value == "") {
-            alert("请输入器材位置！")
+        if (addForm.eqIns.value == "") {
+            alert("请输入器材说明！")
             return false;
         }
-        if (addForm.equipmentStatus.value == "") {
-            alert("请输入器材状态！")
+        if (addForm.eqNumber.value == "") {
+            alert("请输入器材数量！")
             return false;
         }
-        if (addForm.equipmentMessage.value == "") {
+        if (addForm.insertTime.value == "") {
+            alert("请输入购入时间！")
+            return false;
+        }
+        if (addForm.updateTime.value == "") {
+            alert("请输入上次检修时间！")
+            return false;
+        }
+        if (addForm.expiryTime.value == "") {
+            alert("请输入有效时间！")
+            return false;
+        }
+        if (addForm.instruction.value == "") {
+            alert("请输入使用说明！")
+            return false;
+        }
+        if (addForm.remarks.value == "") {
             alert("请输入备注信息！")
             return false;
         }
+
         return true;
     }
 </script>

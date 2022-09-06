@@ -95,10 +95,7 @@ public class UserController {
     public String updateUserInformation(HttpSession session, Member member) {
         Member member1 = (Member) session.getAttribute("user");
 
-        member.setMemberAccount(member1.getMemberAccount());
-        member.setCardClass(member1.getCardClass());
-        member.setCardTime(member1.getCardTime());
-        member.setCardNextClass(member1.getCardNextClass());
+        member.setUserAc(member1.getUserAc());
 
         memberService.updateMemberByMemberAccount(member);
         return "userInformation";
@@ -109,7 +106,7 @@ public class UserController {
     public String toUserClass(Model model, HttpSession session) {
         Member member = (Member) session.getAttribute("user");
         model.addAttribute("member", member);
-        Integer memberAccount = member.getMemberAccount();
+        Integer memberAccount = member.getUserAc();
         List<ClassOrder> classOrderList = classOrderService.selectClassOrderByMemberAccount(memberAccount);
         model.addAttribute("classOrderList", classOrderList);
         return "userClass";
@@ -142,11 +139,11 @@ public class UserController {
         String className = classTable.getClassName();
         String coach = classTable.getCoach();
         String classBegin = classTable.getClassBegin();
-        String memberName = member.getMemberName();
-        Integer memberAccount = member.getMemberAccount();
+        String memberName = member.getUserName();
+        Integer memberAccount = member.getUserAc();
 
         ClassOrder classOrder = new ClassOrder(classId1, className, coach, memberName, memberAccount, classBegin);
-        Integer memberAccount1 = member.getMemberAccount();
+        Integer memberAccount1 = member.getUserAc();
         ClassOrder classOrder1 = classOrderService.selectMemberByClassIdAndMemberAccount(classId1, memberAccount1);
 
         if (classOrder1 == null) {
@@ -169,10 +166,8 @@ public class UserController {
     public String updateUserBusiness(HttpSession session, Member member) {
         Member member1 = (Member) session.getAttribute("user");
 
-        member.setMemberAccount(member1.getMemberAccount());
-        member.setCardClass(member1.getCardClass());
-        member.setCardTime(member1.getCardTime());
-        member.setCardNextClass(member1.getCardNextClass());
+        member.setUserAc(member1.getUserAc());
+
 
 //        memberService.updateMemberByMemberAccount(member);
         return "userBusiness";
