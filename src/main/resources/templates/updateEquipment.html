@@ -23,32 +23,56 @@
                         <div th:each="equ:${equipmentList}">
                             <table class="table table-hover">
                                 <tr>
-                                    <td text-align="center">器材id：</td>
+                                    <td text-align="center">器材编号：</td>
                                     <td><input type="text" class="form-control" readonly="readonly"
-                                               th:value="${equ.equipmentId}" name="equipmentId">
+                                               th:value="${equ.eqId}" name="eqId">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td text-align="center">器材名称：</td>
-                                    <td><input type="text" class="form-control" th:value="${equ.equipmentName}"
-                                               name="equipmentName"></td>
+                                    <td><input type="text" class="form-control" th:value="${equ.eqName}"
+                                               name="eqName"></td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">器材位置：</td>
-                                    <td><input type="text" class="form-control" th:value="${equ.equipmentLocation}"
-                                               name="equipmentLocation">
+                                    <td text-align="center">器材说明：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.eqIns}"
+                                               name="eqIns">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">器材状态：</td>
-                                    <td><input type="text" class="form-control" th:value="${equ.equipmentStatus}"
-                                               name="equipmentStatus">
+                                    <td text-align="center">器材数量：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.eqNumber}"
+                                               name="eqNumber">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td text-align="center">器材备注信息：</td>
-                                    <td><input type="text" class="form-control" th:value="${equ.equipmentMessage}"
-                                               name="equipmentMessage">
+                                    <td text-align="center">购入时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.insertTime}"
+                                               name="insertTime">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">上次检修时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.updateTime}"
+                                               name="updateTime">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">有效时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.expiryTime}"
+                                               name="expiryTime">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">使用说明：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.instruction}"
+                                               name="instruciton">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">备注：</td>
+                                    <td><input type="text" class="form-control" th:value="${equ.remarks}"
+                                               name="remarks">
                                     </td>
                                 </tr>
                             </table>
