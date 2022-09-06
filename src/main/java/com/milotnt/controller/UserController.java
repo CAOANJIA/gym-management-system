@@ -6,16 +6,14 @@ import com.milotnt.pojo.Member;
 import com.milotnt.service.ClassOrderService;
 import com.milotnt.service.ClassTableService;
 import com.milotnt.service.MemberService;
+import com.milotnt.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 /**
  * @author ZhangMing [1157038410@qq.com]
@@ -35,6 +33,8 @@ public class UserController {
     @Autowired
     private ClassOrderService classOrderService;
 
+    @Autowired
+    private MessageService messageService;
 
     //跳转个人信息页面
     @RequestMapping("/toUserInfo")
