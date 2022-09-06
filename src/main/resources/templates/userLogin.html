@@ -40,13 +40,13 @@
                                 <form th:action="@{/userLogin}" method="post" name="loginForm"
                                       onsubmit="return checkSubmit(this)">
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputAccount" name="memberAccount" type="account"
+                                        <input class="form-control" id="inputAccount" name="userAc" type="account"
                                                placeholder="Account"
                                                onkeypress="return event.keyCode>=48&&event.keyCode<=57"/>
                                         <label for="inputAccount">账号</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputPassword" name="memberPassword"
+                                        <input class="form-control" id="inputPassword" name="userPw"
                                                type="password"
                                                placeholder="Password"/>
                                         <label for="inputPassword">密码</label>
@@ -63,7 +63,7 @@
                                         <a class="btn btn-primary" th:href="@{/}">转到管理员登录</a>
                                     </div>
                                 </form>
-                                <div th:text="${member}" style="margin-top: 20px;text-align: center;color: #464646"></div>
+                                <div th:text="${account}" style="margin-top: 20px;text-align: center;color: #464646"></div>
                                 <div th:text="${msg}" style="margin-top: 20px;text-align: center;color: red"></div>
 
 <!--                                <div th:text="${acc.memberAccount}" style="margin-top: 20px;text-align: center;color: red"></div>-->

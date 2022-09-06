@@ -7,8 +7,8 @@
     <select id="selectByAccountAndPassword" resultType="admin">
         SELECT *
         FROM admin
-        WHERE admin_account = #{adminAccount}
-          AND admin_password = #{adminPassword}
+        WHERE admAc = #{admAc}
+          AND admPw = #{admPw}
     </select>
 
 </mapper>
