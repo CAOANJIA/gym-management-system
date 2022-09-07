@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+import java.util.Random;
+
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -89,7 +92,8 @@ public class UserController {
     @RequestMapping("/updateInfo")
     public String updateUserInformation(HttpSession session, Member member) {
         Member member1 = (Member) session.getAttribute("user");
-
+        System.out.println(member);
+        System.out.println(member1);
         member.setUserAc(member1.getUserAc());
 
         memberService.updateMemberByMemberAccount(member);

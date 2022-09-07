@@ -25,48 +25,32 @@
                             <tr>
                                 <td text-align="center">会员账号/卡号：</td>
                                 <td><input type="text" class="form-control" readonly="readonly"
-                                           th:value="${member.memberAccount}" name="memberAccount">
+                                           th:value="${member.userAc}" name="userAc">
                                 </td>
                             </tr>
                             <tr>
                                 <td text-align="center">姓名：</td>
-                                <td><input type="text" class="form-control" th:value="${member.memberName}"
-                                           name="memberName"></td>
+                                <td><input type="text" class="form-control" th:value="${member.userName}"
+                                           name="userName"></td>
                             </tr>
                             <tr>
                                 <td text-align="center">密码：</td>
-                                <td><input type="text" class="form-control" th:value="${member.memberPassword}"
-                                           name="memberPassword">
+                                <td><input type="text" class="form-control" th:value="${member.userPw}"
+                                           name="userPw">
                                 </td>
                             </tr>
                             <tr>
                                 <td text-align="center">性别：</td>
-                                <td><input type="text" class="form-control" th:value="${member.memberGender}"
-                                           name="memberGender">
+                                <td><input type="text" class="form-control" th:value="${member.userGender}"
+                                           name="userGender">
                                 </td>
                             </tr>
-                            <tr>
-                                <td text-align="center">年龄：</td>
-                                <td><input type="text" class="form-control" th:value="${member.memberAge}"
-                                           name="memberAge">
-                                </td>
+
                             </tr>
                             <tr>
                                 <td text-align="center">联系方式：</td>
-                                <td><input type="text" class="form-control" th:value="${member.memberPhone}"
-                                           name="memberPhone">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td text-align="center">身高：</td>
-                                <td><input type="text" class="form-control" th:value="${member.memberHeight}"
-                                           name="memberHeight">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td text-align="center">体重：</td>
-                                <td><input type="text" class="form-control" th:value="${member.memberWeight}"
-                                           name="memberWeight">
+                                <td><input type="text" class="form-control" th:value="${member.userPh}"
+                                           name="userPh">
                                 </td>
                             </tr>
                         </table>
