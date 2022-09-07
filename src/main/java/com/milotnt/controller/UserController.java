@@ -17,11 +17,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/21
- */
-
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -131,20 +126,20 @@ public class UserController {
 
     //报名选课
     @RequestMapping("/applyClass")
-    public String userApplyClass(Integer classId, Model model, HttpSession session) {
-        ClassTable classTable = classTableService.selectByClassId(classId);
+    public String userApplyClass(Integer courseId, Model model, HttpSession session) {
+        ClassTable classTable = classTableService.selectBycourseId(courseId);
         Member member = (Member) session.getAttribute("user");
 
-        Integer classId1 = classTable.getClassId();
-        String className = classTable.getClassName();
-        String coach = classTable.getCoach();
-        String classBegin = classTable.getClassBegin();
+        Integer courseId1 = classTable.getcourseId();
+        String courseName = classTable.getcourseName();
+        String coach = classTable.getcourseBegin();
+        String classBegin = classTable.getcourseBegin();
         String memberName = member.getUserName();
         Integer memberAccount = member.getUserAc();
 
-        ClassOrder classOrder = new ClassOrder(classId1, className, coach, memberName, memberAccount, classBegin);
+        ClassOrder classOrder = new ClassOrder(courseId1, courseName, coach, memberName, memberAccount, classBegin);
         Integer memberAccount1 = member.getUserAc();
-        ClassOrder classOrder1 = classOrderService.selectMemberByClassIdAndMemberAccount(classId1, memberAccount1);
+        ClassOrder classOrder1 = classOrderService.selectMemberByClassIdAndMemberAccount(courseId1, memberAccount1);
 
         if (classOrder1 == null) {
             classOrderService.insertClassOrder(classOrder);

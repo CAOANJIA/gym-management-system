@@ -23,28 +23,43 @@
                           onsubmit="return beforeSubmit(this)">
                         <table class="table table-hover">
                             <tr>
-                                <td text-align="center">编号：</td>
-                                <td><input type="text" class="form-control" placeholder="4位编号" name="classId"></td>
+                                <td text-align="center">课程编号：</td>
+                                <td><input type="text" class="form-control" placeholder="4位编号" name="courseId"></td>
                             </tr>
 
                             <tr>
-                                <td text-align="center">名称：</td>
-                                <td><input type="text" class="form-control" placeholder="课程名称" name="className">
+                                <td text-align="center">课程名称：</td>
+                                <td><input type="text" class="form-control" placeholder="课程名称" name="courseName">
                                 </td>
                             </tr>
                             <tr>
-                                <td text-align="center">时间：</td>
-                                <td><input type="text" class="form-control" placeholder="xxxx年xx月xx日 00：00" name="classBegin">
+                                <td text-align="center">教练编号：</td>
+                                <td><input type="text" class="form-control" placeholder="4位编号" name="trId">
                                 </td>
                             </tr>
                             <tr>
-                                <td text-align="center">时长：</td>
-                                <td><input type="text" class="form-control" placeholder="xx分钟" name="classTime">
+                                <td text-align="center">课程开始时间：</td>
+                                <td><input type="text" class="form-control" placeholder="xxxx年xx月xx日00:00:00" name="courseBegin">
                                 </td>
                             </tr>
                             <tr>
-                                <td text-align="center">教练：</td>
-                                <td><input type="text" class="form-control" placeholder="教练" name="coach">
+                                <td text-align="center">课程结束时间：</td>
+                                <td><input type="text" class="form-control" placeholder="xxxx年xx月xx日00:00:00" name="courseEnd">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">课程价格：</td>
+                                <td><input type="text" class="form-control" placeholder="" name="coursePrice">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">器材编号：</td>
+                                <td><input type="text" class="form-control" placeholder="4位编号" name="eqId">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td text-align="center">备注：</td>
+                                <td><input type="text" class="form-control" placeholder="" name="remarks">
                                 </td>
                             </tr>
                         </table>
@@ -62,24 +77,36 @@
 <div th:include="adminCommon::common-scripts"></div>
 <script type="text/javascript">
     function beforeSubmit(addForm) {
-        if (addForm.classId.value == "") {
+        if (addForm.courseId.value == "") {
             alert("请输入课程编号！")
             return false;
         }
-        if (addForm.className.value == "") {
+        if (addForm.courseName.value == "") {
             alert("请输入课程名称！")
             return false;
         }
-        if (addForm.classBegin.value == "") {
-            alert("请输入课程时间！")
+        if (addForm.trId.value == "") {
+            alert("请输入教练编号！")
             return false;
         }
-        if (addForm.classTime.value == "") {
-            alert("请输入课程时长！")
+        if (addForm.courseBegin.value == "") {
+            alert("请输入课程开始时间！")
             return false;
         }
-        if (addForm.coach.value == "") {
-            alert("请输入教练！")
+        if (addForm.courseEnd.value == "") {
+            alert("请输入课程结束时间！")
+            return false;
+        }
+        if (addForm.coursePrice.value == "") {
+            alert("请输入课程价格！")
+            return false;
+        }
+        if (addForm.eqId.value == "") {
+            alert("请输入器材编号！")
+            return false;
+        }
+        if (addForm.remarks.value == "") {
+            alert("请输入备注！")
             return false;
         }
         return true;

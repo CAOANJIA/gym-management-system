@@ -8,11 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/11
- */
-
 @Service
 public class ClassTableServiceImpl implements ClassTableService {
 
@@ -25,8 +20,8 @@ public class ClassTableServiceImpl implements ClassTableService {
     }
 
     @Override
-    public Boolean deleteClassByClassId(Integer classId) {
-        return classTableMapper.deleteClassByClassId(classId);
+    public Boolean deleteClassBycourseId(Integer courseId) {
+        return classTableMapper.deleteClassBycourseId(courseId);
     }
 
     @Override
@@ -35,12 +30,12 @@ public class ClassTableServiceImpl implements ClassTableService {
     }
 
     @Override
-    public ClassTable selectByClassId(Integer classId) {
-        return classTableMapper.selectByClassId(classId);
+    public ClassTable selectBycourseId(Integer courseId) {
+        return classTableMapper.selectBycourseId(courseId);
     }
 
     @Override
-    public Boolean deleteOrderByClassId(Integer classId) {
-        return classTableMapper.deleteOrderByClassId(classId);
+    public Boolean deleteOrderBycourseId(Integer courseId) {
+        return classTableMapper.deleteOrderBycourseId(courseId);
     }
 }
