@@ -1,7 +1,7 @@
 package com.milotnt.mapper;
 
 import com.milotnt.pojo.Message;
-import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface MessageMapper {
     Boolean insertMessage(Message message);
 
     //查询会员ID查询留言信息
-    List<Message> selectByMessageId(Integer cmUserId);
+    List<Message> selectByMessageId(Integer userId);
 
     //根据留言ID删除留言信息
     Boolean deleteByMessageId(Integer cmId);

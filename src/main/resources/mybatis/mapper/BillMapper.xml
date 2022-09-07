@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.milotnt.mapper.BillMapper">
+
+    <select id="findAll" resultType="Bill">
+        SELECT *
+        FROM bill
+    </select>
+
+    <insert id="insertBill" parameterType="Bill">
+        INSERT INTO bill (rcId, userId, rcType, rcAmount, insertTime,updateTime,
+                             remarks)
+        VALUES (#{rcId}, #{userId}, #{rcType}, #{rcAmount}, #{insertTime},#{updateTime},
+                #{remarks})
+    </insert>
+
+</mapper>

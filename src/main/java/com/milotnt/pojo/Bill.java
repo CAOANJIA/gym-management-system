@@ -1,19 +1,28 @@
 package com.milotnt.pojo;
 
-public class Message {
-    private Integer cmId;
+public class Bill {
+    private Integer rcId;
     private Integer userId;
-    private String cmContent;
+    private String rcType;
+    private Integer rcAmount;
     private String insertTime;
     private String updateTime;
     private String remarks;
 
-    public Integer getCmId() {
-        return cmId;
+    public Integer getRcAmount() {
+        return rcAmount;
     }
 
-    public void setCmId(Integer cmId) {
-        this.cmId = cmId;
+    public void setRcAmount(Integer rcAmount) {
+        this.rcAmount = rcAmount;
+    }
+
+    public Integer getRcId() {
+        return rcId;
+    }
+
+    public void setRcId(Integer rcId) {
+        this.rcId = rcId;
     }
 
     public Integer getUserId() {
@@ -24,12 +33,12 @@ public class Message {
         this.userId = userId;
     }
 
-    public String getCmContent() {
-        return cmContent;
+    public String getRcType() {
+        return rcType;
     }
 
-    public void setCmContent(String cmContent) {
-        this.cmContent = cmContent;
+    public void setRcType(String rcType) {
+        this.rcType = rcType;
     }
 
     public String getInsertTime() {
@@ -58,10 +67,11 @@ public class Message {
 
     @Override
     public String toString() {
-        return "Message{" +
-                "cmId=" + cmId +
+        return "Bill{" +
+                "rcId=" + rcId +
                 ", userId=" + userId +
-                ", cmContent='" + cmContent + '\'' +
+                ", rcType='" + rcType + '\'' +
+                ", rcAmount='" + rcAmount + '\'' +
                 ", insertTime='" + insertTime + '\'' +
                 ", updateTime='" + updateTime + '\'' +
                 ", remarks='" + remarks + '\'' +

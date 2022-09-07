@@ -10,16 +10,16 @@
     </select>
 
     <insert id="insertMessage" parameterType="Message">
-        INSERT INTO message (cmId, cmUserId, cmContent, insertTime, updateTime,
+        INSERT INTO message (cmId, userId, cmContent, insertTime, updateTime,
                              remarks)
-        VALUES (#{cmId}, #{cmUserId}, #{cmContent}, #{insertTime}, #{updateTime},
+        VALUES (#{cmId}, #{userId}, #{cmContent}, #{insertTime}, #{updateTime},
                 #{remarks})
     </insert>
 
     <select id="selectByMessageId" resultType="message">
         SELECT *
         FROM message
-        WHERE cmUserId = #{cmUserId}
+        WHERE userId = #{userId}
     </select>
 
     <delete id="deleteByMessageId" parameterType="java.lang.Integer">

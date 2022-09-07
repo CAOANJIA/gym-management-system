@@ -29,8 +29,8 @@ public class MessageServiceImpl implements MessageService {
 //    }
 
     @Override
-    public List<Message> selectByMessageId(Integer cmUserId) {
-        return messageMapper.selectByMessageId(cmUserId);
+    public List<Message> selectByMessageId(Integer userId) {
+        return messageMapper.selectByMessageId(userId);
     }
 
     @Override
