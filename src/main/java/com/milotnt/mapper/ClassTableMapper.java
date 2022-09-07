@@ -12,15 +12,15 @@ public interface ClassTableMapper {
     List<ClassTable> findAll();
 
     //根据id删除课程
-    Boolean deleteClassByClassId(Integer classId);
+    Boolean deleteClassBycourseId(Integer courseId);
 
     //添加课程
     Boolean insertClass(ClassTable classTable);
 
     //根据id查询课表
-    ClassTable selectByClassId(Integer classId);
+    ClassTable selectBycourseId(Integer courseId);
 
     //根据id删除已预约的课程
-    Boolean deleteOrderByClassId(Integer classId);
+    Boolean deleteOrderBycourseId(Integer courseId);
 
 }

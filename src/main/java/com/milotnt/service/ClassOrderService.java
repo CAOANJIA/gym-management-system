@@ -24,4 +24,5 @@ public interface ClassOrderService {
     //根据课程id查询所有报名的会员
     List<ClassOrder> selectMemberOrderList(Integer classId);
 
+
 }
