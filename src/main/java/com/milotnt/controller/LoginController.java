@@ -54,20 +54,20 @@ public class LoginController {
             session.setAttribute("memberTotal", memberTotal);
 
             //员工人数
-//            Integer employeeTotal = employeeService.selectTotalCount();
-//            model.addAttribute("employeeTotal", employeeTotal);
-//            session.setAttribute("employeeTotal", employeeTotal);
+            Integer coachTotal = employeeService.selectTotalCount();
+            model.addAttribute("coachTotal", coachTotal);
+            session.setAttribute("coachTotal", coachTotal);
 
             //健身房总人数
-//            Integer humanTotal = memberTotal + employeeTotal;
-            Integer humanTotal = memberTotal;
+            Integer humanTotal = memberTotal + coachTotal;
+//            Integer humanTotal = memberTotal;
             model.addAttribute("humanTotal", humanTotal);
             session.setAttribute("humanTotal", humanTotal);
 
             //器材数
-//            Integer equipmentTotal = equipmentService.selectTotalCount();
-//            model.addAttribute("equipmentTotal", equipmentTotal);
-//            session.setAttribute("equipmentTotal", equipmentTotal);
+            Integer equipmentTotal = equipmentService.selectTotalCount();
+            model.addAttribute("equipmentTotal", equipmentTotal);
+            session.setAttribute("equipmentTotal", equipmentTotal);
 
             return "adminMain";
         }
