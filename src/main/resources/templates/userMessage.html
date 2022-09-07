@@ -58,24 +58,24 @@
                             <thead>
                             <tr>
                                 <th>留言编号</th>
-                                <th>留言用户姓名</th>
+                                <th>留言用户编号</th>
                                 <th>留言内容</th>
                                 <th>留言时间</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            <tr>
-                                <td th:text="01">留言编号</td>
-                                <td th:text="萨勒芬妮">留言用户编号</td>
-                                <td th:text="今天舞跳的不错">留言内容</td>
-                                <td th:text="2022">留言时间</td>
+                            <tr th:each="mess : ${messages}">
+                                <td th:text="${mess.cmId}">留言编号</td>
+                                <td th:text="${mess.userId}">留言用户编号</td>
+                                <td th:text="${mess.cmContent}">留言内容</td>
+                                <td th:text="${mess.insertTime}">留言时间</td>
                                 <td>
 <!--                                    <a-->
 <!--                                       style="text-decoration: none">-->
 <!--                                        <input type="button" class="btn btn-sm btn-outline-primary" value="修改">-->
 <!--                                    </a>-->
-                                    <a
+                                    <a th:href="@{/user/toDeleteMessage/{id}(id=${mess.cmId})}"
                                        style="text-decoration: none">
                                         <input type="button" class="btn btn-sm btn-outline-danger"
                                                onclick="return del()" value="删除">

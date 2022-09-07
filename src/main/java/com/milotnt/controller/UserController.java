@@ -3,6 +3,7 @@ package com.milotnt.controller;
 import com.milotnt.pojo.ClassOrder;
 import com.milotnt.pojo.ClassTable;
 import com.milotnt.pojo.Member;
+import com.milotnt.pojo.Message;
 import com.milotnt.service.ClassOrderService;
 import com.milotnt.service.ClassTableService;
 import com.milotnt.service.MemberService;
@@ -10,9 +11,12 @@ import com.milotnt.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -36,6 +40,7 @@ public class UserController {
     @Autowired
     private MessageService messageService;
 
+
     //跳转个人信息页面
     @RequestMapping("/toUserInfo")
     public String toUserInformation(Model model, HttpSession session) {
@@ -45,11 +50,35 @@ public class UserController {
     }
 
     //跳转个人留言页面
+//    @RequestMapping("/toUserMessage")
+//    public String toUserMessage(Model model, HttpSession session) {
+//        Member member = (Member) session.getAttribute("user");
+//        model.addAttribute("member", member);
+//        return "userMessage";
+//    }
+
     @RequestMapping("/toUserMessage")
-    public String toUserMessage(Model model, HttpSession session) {
-        Member member = (Member) session.getAttribute("user");
-        model.addAttribute("member", member);
+    public String toUserMessage(Model model) {
+        List<Message> messages =
+                messageService.findAll();
+        model.addAttribute("messages",messages);
         return "userMessage";
+    }
+
+    //删除留言
+//    @RequestMapping("/toDeleteMessage/{Id}"){
+//        public String deleteEmployeeById(@PathVariable("id") Integer cmId){
+//            //1.调用业务逻辑中的方法实现删除
+//            messageService.deleteByMessageId(cmId);
+//            //2.显示删除后的数据表信息
+//            return "redirect:/toUserMessage";
+//    }
+    @RequestMapping("/toDeleteMessage/{id}")
+    public String deleteEmployeeById(@PathVariable("id") Integer cmId){
+            //1.调用业务逻辑中的方法实现删除
+            messageService.deleteByMessageId(cmId);
+            //2.显示删除后的数据表信息
+            return "redirect:/user/toUserMessage";
     }
 
     //跳转新增留言页面
@@ -60,7 +89,7 @@ public class UserController {
 
     //添加留言界面
     @RequestMapping("/addMessage")
-    public String toAddMessage(Model model, HttpSession session) {
+    public String toAddMessage(Message message) {
         //工号随机生成
 //        Random random = new Random();
 //        String account1 = "1010";
@@ -69,17 +98,19 @@ public class UserController {
 //        }
 //        Integer account = Integer.parseInt(account1);
 //
-//        //获取当前日期
-//        Date date = new Date();
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//        String nowDay = simpleDateFormat.format(date);
+        //获取当前日期
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String nowDay = simpleDateFormat.format(date);
 //
 //        employee.setEmployeeAccount(account);
-//        employee.setEntryTime(nowDay);
+        message.setInsertTime(nowDay);
+//        System.out.println(nowDay);
 //
 //        employeeService.insertEmployee(employee);
+        messageService.insertMessage(message);
 
-        return "redirect:toUserMessage";
+        return "redirect:/user/toUserMessage";
     }
 
     //跳转修改个人信息页面
@@ -156,6 +187,7 @@ public class UserController {
     //跳转会员业务页面
     @RequestMapping("/toUserBusiness")
     public String toUserBusiness(Model model, HttpSession session) {
+
         Member member = (Member) session.getAttribute("user");
         model.addAttribute("member", member);
         return "userBusiness";
@@ -163,13 +195,15 @@ public class UserController {
 
     //会员充值
     @RequestMapping("/updateBusiness")
-    public String updateUserBusiness(HttpSession session, Member member) {
-        Member member1 = (Member) session.getAttribute("user");
+    public String updateUserBusiness(Member member, Integer RechargeBalance) {
+//        Member member1 = (Member) session.getAttribute("user");
 
-        member.setUserAc(member1.getUserAc());
-
-
+//        member.setUserAc(member1.getUserAc());
+//        member.setUserPt(RechargeBalance);
+        System.out.println(RechargeBalance);
+        member.setUserPt(member.getUserPt()+RechargeBalance);
+        memberService.updateMemberPtByMemberAccount(member);
 //        memberService.updateMemberByMemberAccount(member);
-        return "userBusiness";
+        return "redirect:/user/toUserBusiness";
     }
 }

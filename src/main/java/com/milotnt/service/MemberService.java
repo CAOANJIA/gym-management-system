@@ -20,6 +20,9 @@ public interface MemberService {
     //根据会员账号修改会员信息
     Boolean updateMemberByMemberAccount(Member member);
 
+    //根据会员账号修改会员余额
+    Boolean updateMemberPtByMemberAccount(Member member);
+
     //查询会员账号密码（登录）
     Member userLogin(Member member);
     //Member selectByAccountAndPassword(Member member);

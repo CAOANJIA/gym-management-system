@@ -2,7 +2,7 @@ package com.milotnt.pojo;
 
 public class Message {
     private Integer cmId;
-    private Integer cmUserId;
+    private Integer userId;
     private String cmContent;
     private String insertTime;
     private String updateTime;
@@ -16,12 +16,12 @@ public class Message {
         this.cmId = cmId;
     }
 
-    public Integer getCmUserId() {
-        return cmUserId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setCmUserId(Integer cmUserId) {
-        this.cmUserId = cmUserId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getCmContent() {
@@ -60,7 +60,7 @@ public class Message {
     public String toString() {
         return "Message{" +
                 "cmId=" + cmId +
-                ", cmUserId=" + cmUserId +
+                ", userId=" + userId +
                 ", cmContent='" + cmContent + '\'' +
                 ", insertTime='" + insertTime + '\'' +
                 ", updateTime='" + updateTime + '\'' +

@@ -24,18 +24,18 @@
                             <tr>
                                 <td text-align="center">会员账号/卡号：</td>
                                 <td><input type="text" class="form-control" readonly="readonly"
-                                           th:value="${member.memberAccount}" name="memberAccount">
+                                           th:value="${member.userId}" name="userId">
                                 </td>
                             </tr>
                             <tr>
                                 <td text-align="center">姓名：</td>
-                                <td><input type="text" class="form-control" th:value="${member.memberName}"
-                                           name="memberName"></td>
+                                <td><input type="text" class="form-control" th:value="${member.userName}"
+                                           name="userName"></td>
                             </tr>
                             <tr>
                                 <td text-align="center">当前余额：</td>
-                                <td><input type="text" class="form-control" th:value="20"
-                                           name="memberCurrentBalance">
+                                <td><input type="text" class="form-control" th:value="${member.userPt}"
+                                           name="userPt">
                                 </td>
                             </tr>
                             <tr>

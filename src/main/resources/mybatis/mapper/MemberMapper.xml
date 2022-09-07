@@ -26,6 +26,12 @@
         WHERE userAc = #{userAc}
     </update>
 
+    <update id="updateMemberPtByMemberAccount" parameterType="member">
+        UPDATE user
+        SET userPt = #{userPt}
+        WHERE userId = #{userId}
+    </update>
+
     <select id="selectByAccountAndPassword" resultType="member">
         SELECT *
         FROM user
