@@ -1,13 +1,7 @@
 package com.milotnt.controller;
 
-import com.milotnt.pojo.ClassOrder;
-import com.milotnt.pojo.ClassTable;
-import com.milotnt.pojo.Member;
-import com.milotnt.pojo.Message;
-import com.milotnt.service.ClassOrderService;
-import com.milotnt.service.ClassTableService;
-import com.milotnt.service.MemberService;
-import com.milotnt.service.MessageService;
+import com.milotnt.pojo.*;
+import com.milotnt.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,6 +33,9 @@ public class UserController {
 
     @Autowired
     private MessageService messageService;
+
+    @Autowired
+    private BillService billService;
 
 
     //跳转个人信息页面
@@ -193,17 +190,35 @@ public class UserController {
         return "userBusiness";
     }
 
-    //会员充值
+    //会员充值界面
     @RequestMapping("/updateBusiness")
-    public String updateUserBusiness(Member member, Integer RechargeBalance) {
+    public String updateUserBusiness(Member member,Integer RechargeBalance) {
 //        Member member1 = (Member) session.getAttribute("user");
 
 //        member.setUserAc(member1.getUserAc());
 //        member.setUserPt(RechargeBalance);
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String nowDay = simpleDateFormat.format(date);
         System.out.println(RechargeBalance);
         member.setUserPt(member.getUserPt()+RechargeBalance);
         memberService.updateMemberPtByMemberAccount(member);
 //        memberService.updateMemberByMemberAccount(member);
+        Bill bill = new Bill();
+        bill.setUserId(member.getUserId());
+        bill.setRcType("充值");
+        bill.setRcAmount(RechargeBalance);
+        bill.setInsertTime(nowDay);
+        billService.insertBill(bill);
         return "redirect:/user/toUserBusiness";
+    }
+
+    //查看余额变动记录
+    @RequestMapping("/toUserBill")
+    public String seeUserBill(Model model) {
+        List<Bill> bills =
+                billService.findAll();
+        model.addAttribute("bill",bills);
+        return "userBill";
     }
 }

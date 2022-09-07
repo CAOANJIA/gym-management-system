@@ -30,12 +30,12 @@
                             <tr>
                                 <td text-align="center">姓名：</td>
                                 <td><input type="text" class="form-control" th:value="${member.userName}"
-                                           name="userName"></td>
+                                           disabled="disabled" name="userName"></td>
                             </tr>
                             <tr>
                                 <td text-align="center">当前余额：</td>
                                 <td><input type="text" class="form-control" th:value="${member.userPt}"
-                                           name="userPt">
+                                            name="userPt">
                                 </td>
                             </tr>
                             <tr>
@@ -48,6 +48,11 @@
                         <div style="text-align:center;margin-bottom:15px">
                             <input type="submit" class="btn btn-outline-success"
                                    onclick="return update()" value="会员充值">
+                            <a th:href="@{/user/toUserBill}"
+                               style="text-decoration: none;margin-left: 100px">
+                                <input type="button" class="btn btn-outline-success"
+                                       value="消费记录">
+                            </a>
                         </div>
                     </form>
                 </div>

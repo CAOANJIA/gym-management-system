@@ -1,7 +1,9 @@
 package com.milotnt;
 
+import com.milotnt.pojo.Bill;
 import com.milotnt.pojo.Member;
 import com.milotnt.pojo.Message;
+import com.milotnt.service.BillService;
 import com.milotnt.service.MemberService;
 import com.milotnt.service.MessageService;
 import org.junit.Test;
@@ -21,6 +23,9 @@ public class MessageServiceTest {
 
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    private BillService billService;
 
     @Test
     public void testPrint(){
@@ -80,6 +85,26 @@ public class MessageServiceTest {
         member.setUserId(1);
         member.setUserPt(123);
         memberService.updateMemberPtByMemberAccount(member);
+    }
+
+    @Test
+    public void testQueryBill(){
+        List<Bill> bills =
+                billService.findAll();
+        for(Bill bill : bills){
+            System.out.println(bill);
+        }
+    }
+
+    @Test
+    public void testAddBill(){
+        Bill bill = new Bill();
+        bill.setUserId(202214253);
+        bill.setRcType("充值");
+        bill.setRcAmount(1000);
+        bill.setInsertTime("2022-9-7");
+        bill.setRemarks("no");
+        billService.insertBill(bill);
     }
 }
 
