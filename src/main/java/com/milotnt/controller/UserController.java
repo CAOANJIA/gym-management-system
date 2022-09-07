@@ -17,10 +17,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/21
- */
 
 @Controller
 @RequestMapping("/user")
@@ -94,7 +90,8 @@ public class UserController {
     @RequestMapping("/updateInfo")
     public String updateUserInformation(HttpSession session, Member member) {
         Member member1 = (Member) session.getAttribute("user");
-
+        System.out.println(member);
+        System.out.println(member1);
         member.setUserAc(member1.getUserAc());
 
         memberService.updateMemberByMemberAccount(member);
