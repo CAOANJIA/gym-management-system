@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="userCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="userCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="userCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">消费记录</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toUserMain}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/user/toUserBusiness}">会员业务</a></li>
+                    <li class="breadcrumb-item active">余额变动详情</li>
+                </ol>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        余额变动记录表
+                    </div>
+                    <div class="card-body">
+                        <table id="datatablesSimple">
+                            <thead>
+                            <tr>
+                                <th>记录编号</th>
+                                <th>用户编号</th>
+                                <th>变动详情</th>
+                                <th>变动数量</th>
+                                <th>记录时间</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr th:each="bi : ${bill}">
+                                <td th:text="${bi.rcId}">记录编号</td>
+                                <td th:text="${bi.userId}">留言用户编号</td>
+                                <td th:text="${bi.rcType}">变动详情</td>
+                                <td th:text="${bi.rcAmount}">变动详情</td>
+                                <td th:text="${bi.insertTime}">留言时间</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="userCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="userCommon::common-scripts"></div>
+</body>
+</html>

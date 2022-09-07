@@ -45,15 +45,19 @@ public class CoachController {
         }
         Integer account = Integer.parseInt(account1);
 
+        //初始密码
+        String password = "123456";
+
         //获取当前日期
         Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String nowDay = simpleDateFormat.format(date);
 
         coach.setTrAc(account);
+        coach.setTrId(account);
         coach.setInsertTime(nowDay);
         coach.setUpdateTime(nowDay);
-        coach.setTrId(account);
+        coach.setTrPw(password);
 
         coachService.insertCoach(coach);
 

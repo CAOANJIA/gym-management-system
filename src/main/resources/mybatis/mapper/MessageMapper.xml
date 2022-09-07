@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.milotnt.mapper.MessageMapper">
+
+    <select id="findAll" resultType="message">
+        SELECT *
+        FROM message
+    </select>
+
+    <insert id="insertMessage" parameterType="Message">
+        INSERT INTO message (cmId, userId, cmContent, insertTime, updateTime,
+                             remarks)
+        VALUES (#{cmId}, #{userId}, #{cmContent}, #{insertTime}, #{updateTime},
+                #{remarks})
+    </insert>
+
+    <select id="selectByMessageId" resultType="message">
+        SELECT *
+        FROM message
+        WHERE userId = #{userId}
+    </select>
+
+    <delete id="deleteByMessageId" parameterType="java.lang.Integer">
+        DELETE
+        FROM message
+        WHERE cmId = #{cmId}
+    </delete>
+
+    <!--    <select id="selectTotalCount" resultType="java.lang.Integer">-->
+    <!--        SELECT count(*)-->
+    <!--        FROM member-->
+    <!--    </select>-->
+
+    <!--    <select id="selectByMemberAccount" parameterType="java.lang.Integer" resultType="member">-->
+    <!--        SELECT *-->
+    <!--        FROM member-->
+    <!--        WHERE member_account = #{memberAccount}-->
+    <!--    </select>-->
+
+</mapper>

@@ -31,6 +31,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public Boolean updateMemberPtByMemberAccount(Member member){
+        return memberMapper.updateMemberPtByMemberAccount(member);
+    }
+
+    @Override
     public Member userLogin(Member member) {
         return memberMapper.selectByAccountAndPassword(member);
     }
