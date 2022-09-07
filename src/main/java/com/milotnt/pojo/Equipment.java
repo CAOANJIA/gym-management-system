@@ -1,76 +1,121 @@
 package com.milotnt.pojo;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/10
- */
 public class Equipment {
 
-    private Integer equipmentId;
-    private String equipmentName;
-    private String equipmentLocation;
-    private String equipmentStatus;
-    private String equipmentMessage;
+//    private Integer eqId;
+//    private String eqName;
+//    private String eqIns;
+//    private String eqNumber;
+//    private String insertTime;
+    private Integer eqId;
+    private String eqName;
+    private String eqIns;
+    private String eqNumber;
+    private String insertTime;
+    private String updateTime;
+    private String expiryTime;
+    private String instruction;
+    private String remarks;
 
     public Equipment() {
     }
 
-    public Equipment(Integer equipmentId, String equipmentName, String equipmentLocation, String equipmentStatus, String equipmentMessage) {
-        this.equipmentId = equipmentId;
-        this.equipmentName = equipmentName;
-        this.equipmentLocation = equipmentLocation;
-        this.equipmentStatus = equipmentStatus;
-        this.equipmentMessage = equipmentMessage;
+    public Equipment(Integer eqId, String eqName, String eqIns, String eqNumber, String insertTime, String updateTime, String expiryTime, String instruction, String remarks) {
+        this.eqId = eqId;
+        this.eqName = eqName;
+        this.eqIns = eqIns;
+        this.eqNumber = eqNumber;
+        this.insertTime = insertTime;
+        this.updateTime = updateTime;
+        this.expiryTime = expiryTime;
+        this.instruction = instruction;
+        this.remarks = remarks;
     }
 
-    public Integer getEquipmentId() {
-        return equipmentId;
+    public Integer getEqId() {
+        return eqId;
     }
 
-    public void setEquipmentId(Integer equipmentId) {
-        this.equipmentId = equipmentId;
+    public void setEqId(Integer eqId) {
+        this.eqId = eqId;
     }
 
-    public String getEquipmentName() {
-        return equipmentName;
+    public String getEqName() {
+        return eqName;
     }
 
-    public void setEquipmentName(String equipmentName) {
-        this.equipmentName = equipmentName;
+    public void setEqName(String eqName) {
+        this.eqName = eqName;
     }
 
-    public String getEquipmentLocation() {
-        return equipmentLocation;
+    public String getEqIns() {
+        return eqIns;
     }
 
-    public void setEquipmentLocation(String equipmentLocation) {
-        this.equipmentLocation = equipmentLocation;
+    public void setEqIns(String eqIns) {
+        this.eqIns = eqIns;
     }
 
-    public String getEquipmentStatus() {
-        return equipmentStatus;
+    public String getEqNumber() {
+        return eqNumber;
     }
 
-    public void setEquipmentStatus(String equipmentStatus) {
-        this.equipmentStatus = equipmentStatus;
+    public void setEqNumber(String eqNumber) {
+        this.eqNumber = eqNumber;
     }
 
-    public String getEquipmentMessage() {
-        return equipmentMessage;
+    public String getInsertTime() {
+        return insertTime;
     }
 
-    public void setEquipmentMessage(String equipmentMessage) {
-        this.equipmentMessage = equipmentMessage;
+    public void setInsertTime(String insertTime) {
+        this.insertTime = insertTime;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public String getExpiryTime() {
+        return expiryTime;
+    }
+
+    public void setExpiryTime(String expiryTime) {
+        this.expiryTime = expiryTime;
+    }
+
+    public String getInstruction() {
+        return instruction;
+    }
+
+    public void setInstruction(String instruction) {
+        this.instruction = instruction;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
     }
 
     @Override
     public String toString() {
         return "Equipment{" +
-                "equipmentId=" + equipmentId +
-                ", equipmentName='" + equipmentName + '\'' +
-                ", equipmentLocation='" + equipmentLocation + '\'' +
-                ", equipmentStatus='" + equipmentStatus + '\'' +
-                ", equipmentMessage='" + equipmentMessage + '\'' +
+                "eqId=" + eqId +
+                ", eqName='" + eqName + '\'' +
+                ", eqIns='" + eqIns + '\'' +
+                ", eqNumber='" + eqNumber + '\'' +
+                ", insertTime='" + insertTime + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                ", expiryTime='" + expiryTime + '\'' +
+                ", instruction='" + instruction + '\'' +
+                ", remarks='" + remarks + '\'' +
                 '}';
     }
 }

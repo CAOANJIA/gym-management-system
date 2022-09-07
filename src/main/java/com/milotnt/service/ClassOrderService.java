@@ -4,11 +4,6 @@ import com.milotnt.pojo.ClassOrder;
 
 import java.util.List;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/11
- */
-
 public interface ClassOrderService {
 
     //查询所有报名表信息

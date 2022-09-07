@@ -9,31 +9,35 @@
         FROM equipment
     </select>
 
-    <delete id="deleteByEquipmentId" parameterType="java.lang.Integer">
+    <delete id="deleteByeqId" parameterType="java.lang.Integer">
         DELETE
         FROM equipment
-        WHERE equipment_id = #{equipmentId}
+        WHERE eqId = #{eqId}
     </delete>
 
     <insert id="insertEquipment" parameterType="equipment">
-        INSERT INTO equipment (equipment_id, equipment_name, equipment_location, equipment_status, equipment_message)
-        VALUES (#{equipmentId}, #{equipmentName}, #{equipmentLocation}, #{equipmentStatus}, #{equipmentMessage})
+        INSERT INTO equipment (eqId, eqName, eqIns, eqNumber, insertTime, updateTime, expiryTime, instruction, remarks)
+        VALUES (#{eqId}, #{eqName}, #{eqIns}, #{eqNumber}, #{insertTime}, #{updateTime}, #{expiryTime}, #{instruction}, #{remarks})
     </insert>
 
-    <update id="updateEquipmentByEquipmentId" parameterType="equipment">
+    <update id="updateEquipmentByeqId" parameterType="equipment">
         UPDATE equipment
-        SET equipment_id       = #{equipmentId},
-            equipment_name     = #{equipmentName},
-            equipment_location = #{equipmentLocation},
-            equipment_status   = #{equipmentStatus},
-            equipment_message  = #{equipmentMessage}
-        WHERE equipment_id = #{equipmentId}
+        SET eqId       = #{eqId},
+            eqName     = #{eqName},
+            eqIns      = #{eqIns},
+            eqNumber   = #{eqNumber},
+            insertTime = #{insertTime},
+            updateTime = #{updateTime},
+            expiryTime = #{expiryTime},
+            instruction= #{instruction},
+            remarks    = #{remarks}
+        WHERE eqId = #{eqId}
     </update>
 
-    <select id="selectByEquipmentId" parameterType="java.lang.Integer" resultType="equipment">
+    <select id="selectByeqId" parameterType="java.lang.Integer" resultType="equipment">
         SELECT *
         FROM equipment
-        WHERE equipment_id = #{equipmentId}
+        WHERE eqId = #{eqId}
     </select>
 
     <select id="selectTotalCount" resultType="java.lang.Integer">

@@ -36,43 +36,46 @@
                                 <th>编号</th>
                                 <th>姓名</th>
                                 <th>性别</th>
+                                <th>介绍</th>
                                 <th>账号</th>
                                 <th>电话</th>
-                                <th>插入时间</th>
-                                <th>修改时间</th>
+<!--                                <th>插入时间</th>-->
+<!--                                <th>修改时间</th>-->
                                 <th>备注</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
 
                             <tbody>
-<!--                            <tr th:each="emp:${employeeList}">-->
-<!--                                <td th:text="${emp.employeeAccount}">工号</td>-->
-<!--                                <td th:text="${emp.employeeName}">姓名</td>-->
-<!--                                <td th:text="${emp.employeeGender}">性别</td>-->
-<!--                                <td th:text="${emp.employeeAge}">年龄</td>-->
-<!--                                <td th:text="${emp.entryTime}">入职时间</td>-->
-<!--                                <td th:text="${emp.staff}">职务</td>-->
-<!--                                <td th:text="${emp.employeeMessage}">备注信息</td>-->
-<!--                                <td>-->
-<!--                                    <a th:href="@{/employee/toUpdateEmployee(employeeAccount=${emp.employeeAccount})}"-->
-<!--                                       style="text-decoration: none">-->
-<!--                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">-->
-<!--                                    </a>-->
-<!--                                    <a th:href="@{/employee/delEmployee(employeeAccount=${emp.employeeAccount})}"-->
-<!--                                       style="text-decoration: none">-->
-<!--                                        <input type="button" class="btn btn-sm btn-outline-danger"-->
-<!--                                               onclick="return del()" value="解雇">-->
-<!--                                    </a>-->
-<!--                                </td>-->
-<!--                            </tr>-->
+                            <tr th:each="emp:${coachList}">
+                                <td th:text="${emp.trId}">编号</td>
+                                <td th:text="${emp.trName}">姓名</td>
+                                <td th:text="${emp.trGender}">性别</td>
+                                <td th:text="${emp.introduction}">介绍</td>
+                                <td th:text="${emp.trAc}">账号</td>
+                                <td th:text="${emp.trPh}">电话</td>
+<!--                                <td th:text="${emp.insertTime}">插入时间</td>-->
+<!--                                <td th:text="${emp.updateTime}">修改时间</td>-->
+                                <td th:text="${emp.remarks}">备注</td>
+                                <td>
+                                    <a th:href="@{/employee/toUpdateEmployee(trAc=${emp.trAc})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">
+                                    </a>
+                                    <a th:href="@{/employee/delEmployee(trAc=${emp.trAc})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-danger"
+                                               onclick="return del()" value="解雇">
+                                    </a>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div style="text-align:center;margin-top:20px;margin-bottom:20px">
                     <a th:href="@{/employee/toAddEmployee}">
-                        <input type="button" class="btn btn-outline-success" value="添加员工信息">
+                        <input type="button" class="btn btn-outline-success" value="添加教练信息">
                     </a>
                 </div>
             </div>

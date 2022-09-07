@@ -4,11 +4,6 @@ import com.milotnt.pojo.ClassTable;
 
 import java.util.List;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/11
- */
-
 public interface ClassTableService {
 
     //查询所有课程

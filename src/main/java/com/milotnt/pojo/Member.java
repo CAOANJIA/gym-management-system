@@ -11,9 +11,9 @@ public class Member {
     private Long userPh;
     private Integer userPt;
     private String insertTime;
-    private  String updateTime;
+    private String updateTime;
     private String startTime;
-    private  String endTime;
+    private String endTime;
 
     @Override
     public String toString() {

@@ -3,7 +3,7 @@ package com.milotnt.controller;
 import com.milotnt.pojo.Admin;
 import com.milotnt.pojo.Member;
 import com.milotnt.service.AdminService;
-import com.milotnt.service.EmployeeService;
+import com.milotnt.service.CoachService;
 import com.milotnt.service.EquipmentService;
 import com.milotnt.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/20
- */
-
 @Controller
 public class LoginController {
 
@@ -26,7 +21,7 @@ public class LoginController {
     @Autowired
     private AdminService adminService;
     @Autowired
-    private EmployeeService employeeService;
+    private CoachService employeeService;
     @Autowired
     private EquipmentService equipmentService;
 

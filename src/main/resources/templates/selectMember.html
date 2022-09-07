@@ -42,8 +42,8 @@
                                 <th>账号</th>
                                 <th>电话</th>
                                 <th>积分</th>
-                                <th>插入时间</th>
-                                <th>修改时间</th>
+<!--                                <th>插入时间</th>-->
+<!--                                <th>修改时间</th>-->
                                 <th>开始时间</th>
                                 <th>截止时间</th>
                                 <th>备注</th>
@@ -52,29 +52,30 @@
                             </thead>
 
                             <tbody>
-<!--                            <tr th:each="mem:${memberList}">-->
-<!--                                <td th:text="${mem.memberAccount}">会员账号/卡号</td>-->
-<!--                                <td th:text="${mem.memberName}">姓名</td>-->
-<!--                                <td th:text="${mem.cardTime}">办卡时间</td>-->
-<!--                                <td th:text="${mem.memberGender}">性别</td>-->
-<!--                                <td th:text="${mem.memberAge}">年龄</td>-->
-<!--                                <td th:text="${mem.memberPhone}">联系方式</td>-->
-<!--                                <td th:text="${mem.memberHeight}">身高</td>-->
-<!--                                <td th:text="${mem.memberWeight}">体重</td>-->
-<!--                                <td th:text="${mem.cardClass}">购买课时</td>-->
-<!--                                <td th:text="${mem.cardNextClass}">剩余课时</td>-->
-<!--                                <td>-->
-<!--                                    <a th:href="@{/member/toUpdateMember(memberAccount=${mem.memberAccount})}"-->
-<!--                                       style="text-decoration: none">-->
-<!--                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">-->
-<!--                                    </a>-->
-<!--                                    <a th:href="@{/member/delMember(memberAccount=${mem.memberAccount})}"-->
-<!--                                       style="text-decoration: none">-->
-<!--                                        <input type="button" class="btn btn-sm btn-outline-danger"-->
-<!--                                               onclick="return del()" value="删除">-->
-<!--                                    </a>-->
-<!--                                </td>-->
-<!--                            </tr>-->
+                            <tr th:each="mem:${memberList}">
+                                <td th:text="${mem.userId}">编号</td>
+                                <td th:text="${mem.userName}">姓名</td>
+                                <td th:text="${mem.userGender}">性别</td>
+                                <td th:text="${mem.userAc}">账号</td>
+                                <td th:text="${mem.userPh}">电话</td>
+                                <td th:text="${mem.userPt}">积分</td>
+<!--                                <td th:text="${mem.insertTime}">插入时间</td>-->
+<!--                                <td th:text="${mem.updateTime}">修改时间</td>-->
+                                <td th:text="${mem.startTime}">开始时间</td>
+                                <td th:text="${mem.endTime}">截止时间</td>
+                                <td th:text="${mem.remarks}">备注</td>
+                                <td>
+                                    <a th:href="@{/member/toUpdateMember(memberAccount=${mem.userAc})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">
+                                    </a>
+                                    <a th:href="@{/member/delMember(memberAccount=${mem.userAc})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-danger"
+                                               onclick="return del()" value="删除">
+                                    </a>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
