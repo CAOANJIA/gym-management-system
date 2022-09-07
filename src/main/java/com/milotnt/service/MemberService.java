@@ -4,11 +4,6 @@ import com.milotnt.pojo.Member;
 
 import java.util.List;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/11
- */
-
 public interface MemberService {
 
     //查询会员信息

@@ -13,11 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/20
- */
-
 @Controller
 public class LoginController {
 

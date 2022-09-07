@@ -17,11 +17,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/21
- */
-
 @Controller
 @RequestMapping("/user")
 public class UserController {

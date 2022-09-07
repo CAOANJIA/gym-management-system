@@ -1,9 +1,5 @@
 package com.milotnt.pojo;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/10
- */
 public class ClassOrder {
 
     private Integer classOrderId;
