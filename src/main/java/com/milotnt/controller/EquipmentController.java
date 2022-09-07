@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Random;
 
 @Controller
 @RequestMapping("/equipment")
@@ -57,6 +58,15 @@ public class EquipmentController {
     //新增器材
     @RequestMapping("/addEquipment")
     public String addEquipment(Equipment equipment) {
+        //器材编号随机生成
+        Random random = new Random();
+        String id1 = "2022";
+        for (int i = 0; i < 5; i++) {
+            id1 += random.nextInt(10);
+        }
+        Integer id = Integer.parseInt(id1);
+        equipment.setEqId(id);
+
         equipmentService.insertEquipment(equipment);
         return "redirect:selEquipment";
     }

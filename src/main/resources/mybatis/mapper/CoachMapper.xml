@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.milotnt.mapper.CoachMapper">
+
+    <select id="findAll" resultType="coach">
+        SELECT *
+        FROM coach
+    </select>
+
+    <delete id="deleteByCoachAccount" parameterType="java.lang.Integer">
+        DELETE
+        FROM coach
+        WHERE trAc = #{trAc}
+    </delete>
+
+    <insert id="insertCoach" parameterType="coach">
+        INSERT INTO coach (trId, trName, trGender,
+                            introduction, trAc, trPw,
+                            trPh, insertTime, updateTime,
+                            remarks)
+        VALUES (#{trId}, #{trName}, #{trGender},
+                #{introduction}, #{trAc}, #{trPw},
+                #{trPh}, #{insertTime}, #{updateTime},
+                #{remarks})
+    </insert>
+
+    <update id="updateMemberByCoachAccount" parameterType="coach">
+        UPDATE coach
+        SET trId            = #{trId},
+            trName          = #{trName},
+            trGender        = #{trGender},
+            introduction    = #{introduction},
+            trAc            = #{trAc},
+            trPw            = #{trPw},
+            trPh            = #{trPh},
+            insertTime      = #{insertTime},
+            updateTime      = #{updateTime},
+            remarks         = #{remarks}
+        WHERE trAc          = #{trAc}
+    </update>
+
+    <select id="selectByCoachAccount" parameterType="java.lang.Integer" resultType="coach">
+        SELECT *
+        FROM coach
+        WHERE trAc = #{trAc}
+    </select>
+
+    <select id="selectTotalCount" resultType="java.lang.Integer">
+        SELECT count(*)
+        FROM coach
+    </select>
+
+</mapper>

@@ -17,7 +17,7 @@
 
     <insert id="insertEquipment" parameterType="equipment">
         INSERT INTO equipment (eqId, eqName, eqIns, eqNumber, insertTime, updateTime, expiryTime, instruction, remarks)
-        VALUES (#{eqId}, #{eqName}, #{eqIns}, #{eqNumber}, #{insertTime}, #{expiryTime}, #{instruction}, #{remarks})
+        VALUES (#{eqId}, #{eqName}, #{eqIns}, #{eqNumber}, #{insertTime}, #{updateTime}, #{expiryTime}, #{instruction}, #{remarks})
     </insert>
 
     <update id="updateEquipmentByeqId" parameterType="equipment">

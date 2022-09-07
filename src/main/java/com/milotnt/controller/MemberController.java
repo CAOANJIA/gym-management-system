@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -92,6 +95,10 @@ public class MemberController {
     //修改会员信息
     @RequestMapping("/updateMember")
     public String updateMember(Member member) {
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String nowDay = simpleDateFormat.format(date);
+        member.setUpdateTime(nowDay);
         memberService.updateMemberByMemberAccount(member);
         return "redirect:selMember";
     }

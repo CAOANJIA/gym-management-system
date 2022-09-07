@@ -3,7 +3,7 @@ package com.milotnt.controller;
 import com.milotnt.pojo.Admin;
 import com.milotnt.pojo.Member;
 import com.milotnt.service.AdminService;
-import com.milotnt.service.EmployeeService;
+import com.milotnt.service.CoachService;
 import com.milotnt.service.EquipmentService;
 import com.milotnt.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/20
- */
-
 @Controller
 public class LoginController {
 
@@ -26,7 +21,7 @@ public class LoginController {
     @Autowired
     private AdminService adminService;
     @Autowired
-    private EmployeeService employeeService;
+    private CoachService employeeService;
     @Autowired
     private EquipmentService equipmentService;
 
@@ -59,20 +54,20 @@ public class LoginController {
             session.setAttribute("memberTotal", memberTotal);
 
             //员工人数
-//            Integer employeeTotal = employeeService.selectTotalCount();
-//            model.addAttribute("employeeTotal", employeeTotal);
-//            session.setAttribute("employeeTotal", employeeTotal);
+            Integer coachTotal = employeeService.selectTotalCount();
+            model.addAttribute("coachTotal", coachTotal);
+            session.setAttribute("coachTotal", coachTotal);
 
             //健身房总人数
-//            Integer humanTotal = memberTotal + employeeTotal;
-            Integer humanTotal = memberTotal;
+            Integer humanTotal = memberTotal + coachTotal;
+//            Integer humanTotal = memberTotal;
             model.addAttribute("humanTotal", humanTotal);
             session.setAttribute("humanTotal", humanTotal);
 
             //器材数
-//            Integer equipmentTotal = equipmentService.selectTotalCount();
-//            model.addAttribute("equipmentTotal", equipmentTotal);
-//            session.setAttribute("equipmentTotal", equipmentTotal);
+            Integer equipmentTotal = equipmentService.selectTotalCount();
+            model.addAttribute("equipmentTotal", equipmentTotal);
+            session.setAttribute("equipmentTotal", equipmentTotal);
 
             return "adminMain";
         }

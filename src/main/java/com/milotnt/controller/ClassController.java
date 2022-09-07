@@ -11,11 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/**
- * @author ZhangMing [1157038410@qq.com]
- * @date 2021/8/19
- */
-
 @Controller
 @RequestMapping("/class")
 public class ClassController {
