@@ -39,8 +39,8 @@
                                 <th>介绍</th>
                                 <th>账号</th>
                                 <th>电话</th>
-                                <th>插入时间</th>
-                                <th>修改时间</th>
+<!--                                <th>插入时间</th>-->
+<!--                                <th>修改时间</th>-->
                                 <th>备注</th>
                                 <th>操作</th>
                             </tr>
@@ -54,15 +54,15 @@
                                 <td th:text="${emp.introduction}">介绍</td>
                                 <td th:text="${emp.trAc}">账号</td>
                                 <td th:text="${emp.trPh}">电话</td>
-                                <td th:text="${emp.insertTime}">插入时间</td>
-                                <td th:text="${emp.updateTime}">修改时间</td>
+<!--                                <td th:text="${emp.insertTime}">插入时间</td>-->
+<!--                                <td th:text="${emp.updateTime}">修改时间</td>-->
                                 <td th:text="${emp.remarks}">备注</td>
                                 <td>
                                     <a th:href="@{/employee/toUpdateEmployee(trAc=${emp.trAc})}"
                                        style="text-decoration: none">
                                         <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">
                                     </a>
-                                    <a th:href="@{/coach/delEmployee(trAc=${emp.trAc})}"
+                                    <a th:href="@{/employee/delEmployee(trAc=${emp.trAc})}"
                                        style="text-decoration: none">
                                         <input type="button" class="btn btn-sm btn-outline-danger"
                                                onclick="return del()" value="解雇">
@@ -75,7 +75,7 @@
                 </div>
                 <div style="text-align:center;margin-top:20px;margin-bottom:20px">
                     <a th:href="@{/employee/toAddEmployee}">
-                        <input type="button" class="btn btn-outline-success" value="添加员工信息">
+                        <input type="button" class="btn btn-outline-success" value="添加教练信息">
                     </a>
                 </div>
             </div>
