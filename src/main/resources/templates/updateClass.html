@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="adminCommon::common-header"></head>
+<body class="sb-nav-fixed">
+<nav th:replace="adminCommon::common-navbar"></nav>
+<div id="layoutSidenav">
+    <div th:replace="adminCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">编辑课程</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item"><a th:href="@{/class/selClass}">课程管理</a></li>
+                    <li class="breadcrumb-item active">编辑课程</li>
+                </ol>
+
+                <div class="card mb-4">
+
+                    <form th:action="@{/class/updateClass}" method="post">
+                        <div th:each="class:${classList}">
+                            <table class="table table-hover">
+                                <tr>
+                                    <td text-align="center">课程编号：</td>
+                                    <td><input type="text" class="form-control" readonly="readonly"
+                                               th:value="${class.courseId}" name="courseId">
+                                    </td>
+                                </tr>
+                                <tr>*
+                                    <td text-align="center">课程名称：</td>
+                                    <td><input type="text" class="form-control" th:value="${class.courseName}"
+                                               name="courseName">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">教练编号：</td>
+                                    <td><input type="text" class="form-control" th:value="${class.trId}"
+                                               name="trId">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">课程开始时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${class.courseBegin}"
+                                               name="courseBegin">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">课程结束时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${class.courseEnd}"
+                                               name="courseEnd">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">课程价格：</td>
+                                    <td><input type="text" class="form-control" th:value="${class.coursePrice}"
+                                               name="coursePrice">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">使用器材：</td>
+                                    <td><input type="text" class="form-control" th:value="${class.eqId}"
+                                               name="eqId">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">插入时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${class.insertTime}"
+                                               name="insertTime">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td text-align="center">修改时间：</td>
+                                    <td><input type="text" class="form-control" th:value="${class.updateTime}"
+                                               name="updateTime">
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td text-align="center">备注：</td>
+                                    <td><input type="text" class="form-control" th:value="${class.remarks}"
+                                               name="remarks">
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="text-align:center;margin-bottom:15px">
+                                <input type="submit" class="btn btn-outline-success" value="确认修改">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer th:replace="adminCommon::common-footer"></footer>
+    </div>
+</div>
+
+<div th:include="adminCommon::common-scripts"></div>
+</body>
+</html>

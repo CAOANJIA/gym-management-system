@@ -40,13 +40,13 @@
 
                             <tbody>
                             <tr th:each="class:${classList}">
-                                <td th:text="${class.getcourseId()}">课程编号</td>
-                                <td th:text="${class.getcourseName()}">课程名称</td>
-                                <td th:text="${class.gettrId()}">教练编号</td>
-                                <td th:text="${class.getcourseBegin()}">课程开始时间</td>
-                                <td th:text="${class.getcourseEnd()}">课程结束时间</td>
-                                <td th:text="${class.getcoursePrice()}">课程价格</td>
-                                <td th:text="${class.geteqId()}">器材编号</td>
+                                <td th:text="${class.getCourseId()}">课程编号</td>
+                                <td th:text="${class.getCourseName()}">课程名称</td>
+                                <td th:text="${class.getTrId()}">教练编号</td>
+                                <td th:text="${class.getCourseBegin()}">课程开始时间</td>
+                                <td th:text="${class.getCourseEnd()}">课程结束时间</td>
+                                <td th:text="${class.getCoursePrice()}">课程价格</td>
+                                <td th:text="${class.getEqId()}">器材编号</td>
                                 <td th:text="${class.getInsertTime()}">插入时间</td>
                                 <td th:text="${class.getUpdateTime()}">修改时间</td>
                                 <td th:text="${class.getRemarks()}">备注</td>
@@ -62,11 +62,15 @@
                                 <td th:text="${class.updateTime}">修改时间</td>
                                 <td th:text="${class.remarks}">备注</td>-->
                                 <td>
-                                   <a th:href="@{/class/selClassOrder(courseId=${class.getcourseId()})}"
+                                   <a th:href="@{/class/selClassOrder(courseId=${class.getCourseId()})}"
                                        style="text-decoration: none">
                                         <input type="button" class="btn btn-sm btn-outline-secondary" value="报名信息">
                                     </a>
-                                    <a th:href="@{/class/delClass(courseId=${class.getcourseId()})}"
+                                    <a th:href="@{/class/toUpdateClass(courseId=${class.getCourseId()})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-primary" value="编辑">
+                                    </a>
+                                    <a th:href="@{/class/delClass(courseId=${class.getCourseId()})}"
                                        style="text-decoration: none">
                                         <input type="button" class="btn btn-sm btn-outline-danger"
                                                onclick="return del()" value="删除">
