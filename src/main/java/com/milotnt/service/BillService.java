@@ -9,4 +9,6 @@ public interface BillService {
     List<Bill> findAll();
 
     Boolean insertBill(Bill bill);
+
+    List<Bill> selectBillByUserId(Integer userId);
 }

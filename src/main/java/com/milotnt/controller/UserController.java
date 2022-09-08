@@ -213,9 +213,11 @@ public class UserController {
 
     //查看余额变动记录
     @RequestMapping("/toUserBill")
-    public String seeUserBill(Model model) {
+    public String seeUserBill(Model model,HttpSession session) {
+        Member member = (Member) session.getAttribute("user");
+        model.addAttribute("member", member);
         List<Bill> bills =
-                billService.findAll();
+                billService.selectBillByUserId(member.getUserId());
         model.addAttribute("bill",bills);
         return "userBill";
     }

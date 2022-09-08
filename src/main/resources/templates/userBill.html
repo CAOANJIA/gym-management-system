@@ -37,10 +37,10 @@
                             <tbody>
                             <tr th:each="bi : ${bill}">
                                 <td th:text="${bi.rcId}">记录编号</td>
-                                <td th:text="${bi.userId}">留言用户编号</td>
+                                <td th:text="${bi.userId}">用户编号</td>
                                 <td th:text="${bi.rcType}">变动详情</td>
                                 <td th:text="${bi.rcAmount}">变动详情</td>
-                                <td th:text="${bi.insertTime}">留言时间</td>
+                                <td th:text="${bi.insertTime}">记录时间</td>
                             </tr>
                             </tbody>
                         </table>
