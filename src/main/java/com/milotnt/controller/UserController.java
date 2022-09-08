@@ -162,10 +162,10 @@ public class UserController {
         ClassTable classTable = classTableService.selectBycourseId(courseId);
         Member member = (Member) session.getAttribute("user");
 
-        Integer courseId1 = classTable.getcourseId();
-        String courseName = classTable.getcourseName();
-        String coach = classTable.getcourseBegin();
-        String classBegin = classTable.getcourseBegin();
+        Integer courseId1 = classTable.getCourseId();
+        String courseName = classTable.getCourseName();
+        String coach = classTable.getCourseBegin();
+        String classBegin = classTable.getCourseBegin();
         String memberName = member.getUserName();
         Integer memberAccount = member.getUserAc();
 
