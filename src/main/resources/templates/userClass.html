@@ -27,7 +27,8 @@
                             <tr>
                                 <th>编号</th>
                                 <th>名称</th>
-                                <th>时间</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
                                 <th>教练</th>
                                 <th>操作</th>
                             </tr>
@@ -35,10 +36,11 @@
 
                             <tbody>
  <!--                           <tr th:each="class:${classOrderList}">
-                                <td th:text="${class.classId}">编号</td>
-                                <td th:text="${class.className}">名称</td>
-                                <td th:text="${class.classBegin}">时间</td>
-                                <td th:text="${class.coach}">教练</td>
+                                <td th:text="${class.courseId}">编号</td>
+                                <td th:text="${class.userId}">名称</td>
+                                <td th:text="${class.courseBegin}">开始时间</td>
+                                <td th:text="${class.courseEnd}">结束时间</td>
+                                <td th:text="${class.trId}">教练</td>
                                 <td>
                                     <a th:href="@{/user/delUserClass(classOrderId=${class.classOrderId})}"
                                        style="text-decoration: none">

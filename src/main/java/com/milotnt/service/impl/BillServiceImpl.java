@@ -21,4 +21,8 @@ public class BillServiceImpl implements BillService {
 
     @Override
     public Integer querySumAmountByMonth(Integer month, String rcType){return billMapper.querySumAmountByMonth(month, rcType);}
+    
+    @Override
+    public List<Bill> selectBillByUserId(Integer userId){return  billMapper.selectBillByUserId(userId);}
+
 }
