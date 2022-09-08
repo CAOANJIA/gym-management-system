@@ -4,10 +4,20 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
+var xAxis=[];
+var yAxis=[];
+$.getJSON("/queryXiaoFeiSumAmountByMonth", function (data) {
+  for(var i = 0; i < data.length; i++){
+    xAxis.push(data[i].mon);
+    yAxis.push(data[i].sumAmount);
+  }
+})
+alert(xAxis[9]);
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    // labels: xAxis,
     datasets: [{
       label: "Consumption",
       lineTension: 0.3,
@@ -20,7 +30,11 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451],
+      // data: [10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451],
+      data: yAxis,
+      // data: [yAxis[0].value(), yAxis[1].value(), yAxis[2].value(), yAxis[3].value(),
+      //        yAxis[4].value(), yAxis[5].value(), yAxis[].value(), yAxis[0].value(),
+      //        yAxis[0].value(), yAxis[0].value(), yAxis[0].value(), yAxis[0].value()]
     }],
   },
   options: {

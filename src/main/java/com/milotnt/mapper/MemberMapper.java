@@ -24,6 +24,9 @@ public interface MemberMapper {
     //查询会员账号密码
     Member selectByAccountAndPassword(Member member);
 
+    //根据会员Id查询会员余额
+    Integer selectMemberPtByMemberAccount(Integer userId);
+
     //根据会员账号删除会员信息
     Boolean deleteByMemberAccount(Integer memberAccount);
 

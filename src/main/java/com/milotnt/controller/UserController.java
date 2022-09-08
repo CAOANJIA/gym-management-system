@@ -52,7 +52,9 @@ public class UserController {
 //    }
 
     @RequestMapping("/toUserMessage")
-    public String toUserMessage(Model model) {
+    public String toUserMessage(Model model, HttpSession session) {
+        Member member = (Member) session.getAttribute("user");
+        model.addAttribute("member", member);
         List<Message> messages =
                 messageService.findAll();
         model.addAttribute("messages",messages);
@@ -77,7 +79,9 @@ public class UserController {
 
     //跳转新增留言页面
     @RequestMapping("/toAddMessage")
-    public String toMessage() {
+    public String toMessage(Model model, HttpSession session) {
+        Member member = (Member) session.getAttribute("user");
+        model.addAttribute("member", member);
         return "addMessage";
     }
 
@@ -185,6 +189,7 @@ public class UserController {
     public String toUserBusiness(Model model, HttpSession session) {
 
         Member member = (Member) session.getAttribute("user");
+        member.setUserPt(memberService.selectMemberPtByMemberAccount(member.getUserId()));
         model.addAttribute("member", member);
         return "userBusiness";
     }
@@ -214,9 +219,11 @@ public class UserController {
 
     //查看余额变动记录
     @RequestMapping("/toUserBill")
-    public String seeUserBill(Model model) {
+    public String seeUserBill(Model model,HttpSession session) {
+        Member member = (Member) session.getAttribute("user");
+        model.addAttribute("member", member);
         List<Bill> bills =
-                billService.findAll();
+                billService.selectBillByUserId(member.getUserId());
         model.addAttribute("bill",bills);
         return "userBill";
     }

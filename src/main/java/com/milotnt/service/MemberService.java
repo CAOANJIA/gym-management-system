@@ -18,6 +18,9 @@ public interface MemberService {
     //根据会员账号修改会员余额
     Boolean updateMemberPtByMemberAccount(Member member);
 
+    //根据会员Id查询会员余额
+    Integer selectMemberPtByMemberAccount(Integer userId);
+
     //查询会员账号密码（登录）
     Member userLogin(Member member);
     //Member selectByAccountAndPassword(Member member);

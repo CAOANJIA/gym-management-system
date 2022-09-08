@@ -9,11 +9,24 @@
         FROM bill
     </select>
 
+    <select id="selectBillByUserId" resultType="Bill">
+        SELECT *
+        FROM bill
+        WHERE userId = #{userId}
+    </select>
+
     <insert id="insertBill" parameterType="Bill">
         INSERT INTO bill (rcId, userId, rcType, rcAmount, insertTime,updateTime,
                              remarks)
         VALUES (#{rcId}, #{userId}, #{rcType}, #{rcAmount}, #{insertTime},#{updateTime},
                 #{remarks})
     </insert>
+
+    <select id="querySumAmountByMonth" resultType="Integer">
+        SELECT sum(rcAmount)
+        FROM bill
+        WHERE MONTH(insertTime)=#{month} AND rcType=#{rcType}
+        GROUP BY rcType
+    </select>
 
 </mapper>

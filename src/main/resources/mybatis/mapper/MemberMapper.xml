@@ -37,6 +37,12 @@
         WHERE userId = #{userId}
     </update>
 
+    <select id="selectMemberPtByMemberAccount" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        SELECT userPt
+        FROM user
+        WHERE userId = #{userId}
+    </select>
+
     <select id="selectByAccountAndPassword" resultType="member">
         SELECT *
         FROM user
