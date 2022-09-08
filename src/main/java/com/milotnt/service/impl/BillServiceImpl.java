@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class BillServiceImpl implements BillService {
-    @Autowired
+    @Autowired()
     private BillMapper billMapper;
 
     @Override
@@ -18,4 +18,7 @@ public class BillServiceImpl implements BillService {
 
     @Override
     public Boolean insertBill(Bill bill){return billMapper.insertBill(bill);}
+
+    @Override
+    public Integer querySumAmountByMonth(Integer month, String rcType){return billMapper.querySumAmountByMonth(month, rcType);}
 }

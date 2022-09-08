@@ -11,4 +11,6 @@ public interface BillMapper {
     List<Bill> findAll();
 
     Boolean insertBill(Bill bill);
+
+    Integer querySumAmountByMonth(Integer month, String rcType);
 }

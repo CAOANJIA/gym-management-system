@@ -16,4 +16,11 @@
                 #{remarks})
     </insert>
 
+    <select id="querySumAmountByMonth" resultType="Integer">
+        SELECT sum(rcAmount)
+        FROM bill
+        WHERE MONTH(insertTime)=#{month} AND rcType=#{rcType}
+        GROUP BY rcType
+    </select>
+
 </mapper>
