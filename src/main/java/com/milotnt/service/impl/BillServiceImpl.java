@@ -18,4 +18,7 @@ public class BillServiceImpl implements BillService {
 
     @Override
     public Boolean insertBill(Bill bill){return billMapper.insertBill(bill);}
+
+    @Override
+    public List<Bill> selectBillByUserId(Integer userId){return  billMapper.selectBillByUserId(userId);}
 }
