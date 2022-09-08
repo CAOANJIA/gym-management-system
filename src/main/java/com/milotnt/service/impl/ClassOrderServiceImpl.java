@@ -25,18 +25,18 @@ public class ClassOrderServiceImpl implements ClassOrderService {
     }
 
     @Override
-    public List<ClassOrder> selectClassOrderByMemberAccount(Integer memberAccount) {
-        return classOrderMapper.selectClassOrderByMemberAccount(memberAccount);
+    public List<ClassOrder> selectClassOrderByMemberAccount(Integer userId) {
+        return classOrderMapper.selectClassOrderByMemberAccount(userId);
     }
 
     @Override
-    public Boolean deleteByClassOrderId(Integer classOrderId) {
-        return classOrderMapper.deleteByClassOrderId(classOrderId);
+    public Boolean deleteByClassOrderId(Integer appid) {
+        return classOrderMapper.deleteByClassOrderId(appid);
     }
 
     @Override
-    public ClassOrder selectMemberByClassIdAndMemberAccount(Integer classId, Integer memberAccount) {
-        return classOrderMapper.selectMemberByClassIdAndMemberAccount(classId, memberAccount);
+    public ClassOrder selectMemberByClassIdAndMemberAccount(Integer courseId, Integer userId) {
+        return classOrderMapper.selectMemberByClassIdAndMemberAccount(courseId, userId);
     }
 
     @Override

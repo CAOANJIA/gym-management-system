@@ -13,4 +13,6 @@ public interface BillMapper {
     Boolean insertBill(Bill bill);
 
     List<Bill> selectBillByUserId(Integer userId);
+
+
 }

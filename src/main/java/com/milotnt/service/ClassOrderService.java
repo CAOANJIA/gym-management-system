@@ -13,10 +13,10 @@ public interface ClassOrderService {
     Boolean insertClassOrder(ClassOrder classOrder);
 
     //根据会员账号查询个人报名课表
-    List<ClassOrder> selectClassOrderByMemberAccount(Integer memberAccount);
+    List<ClassOrder> selectClassOrderByMemberAccount(Integer userId);
 
     //删除已预约的课程
-    Boolean deleteByClassOrderId(Integer classOrderId);
+    Boolean deleteByClassOrderId(Integer appid);
 
     //查询会员是否报名该课程
     ClassOrder selectMemberByClassIdAndMemberAccount(Integer classId, Integer memberAccount);

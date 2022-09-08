@@ -49,12 +49,12 @@
         WHERE userAc = #{userAc}
           AND userPw = #{userPw}
     </select>
-
-    <delete id="deleteByMemberAccount" parameterType="java.lang.Integer">
-        DELETE
-        FROM user
-        WHERE userAc = #{userAc}
-    </delete>
+<!--update-->
+<!--    <delete id="deleteByMemberAccount" parameterType="java.lang.Integer">-->
+<!--        DELETE-->
+<!--        FROM user-->
+<!--        WHERE userAc = #{userAc}-->
+<!--    </delete>-->
 
     <select id="selectTotalCount" resultType="java.lang.Integer">
         SELECT count(*)

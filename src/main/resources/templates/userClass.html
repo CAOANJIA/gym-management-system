@@ -35,20 +35,20 @@
                             </thead>
 
                             <tbody>
- <!--                           <tr th:each="class:${classOrderList}">
+                                <tr th:each="class:${classOrderList}">
                                 <td th:text="${class.courseId}">编号</td>
                                 <td th:text="${class.userId}">名称</td>
-                                <td th:text="${class.courseBegin}">开始时间</td>
-                                <td th:text="${class.courseEnd}">结束时间</td>
+                                <td th:text="${class.classBegin}">开始时间</td>
+                                <td th:text="${class.classEnd}">结束时间</td>
                                 <td th:text="${class.trId}">教练</td>
                                 <td>
-                                    <a th:href="@{/user/delUserClass(classOrderId=${class.classOrderId})}"
+                                    <a th:href="@{/user/delUserClass(appid=${class.appId})}"
                                        style="text-decoration: none">
                                         <input type="button" class="btn btn-sm btn-outline-danger"
                                                onclick="return del()" value="退课">
                                     </a>
                                 </td>
-                            </tr>-->
+                            </tr>
                             </tbody>
                         </table>
                     </div>
