@@ -25,34 +25,54 @@
                         <table id="datatablesSimple">
                             <thead>
                             <tr>
-                                <th>编号</th>
-                                <th>名称</th>
-                                <th>时间</th>
-                                <th>时长</th>
-                                <th>教练</th>
-                                <th>操作</th>
+                                <th>课程编号</th>
+                                <th>课程名称</th>
+                                <th>教练编号</th>
+                                <th>课程开始时间</th>
+                                <th>课程结束时间</th>
+                                <th>课程价格</th>
+                                <th>器材编号</th>
+                                <th>插入时间</th>
+                                <th>修改时间</th>
+                                <th>备注</th>
                             </tr>
                             </thead>
 
                             <tbody>
-<!--                            <tr th:each="class:${classList}">-->
-<!--                                <td th:text="${class.classId}">编号</td>-->
-<!--                                <td th:text="${class.className}">名称</td>-->
-<!--                                <td th:text="${class.classBegin}">时间</td>-->
-<!--                                <td th:text="${class.classTime}">时长</td>-->
-<!--                                <td th:text="${class.coach}">教练</td>-->
-<!--                                <td>-->
-<!--                                    <a th:href="@{/class/selClassOrder(classId=${class.classId})}"-->
-<!--                                       style="text-decoration: none">-->
-<!--                                        <input type="button" class="btn btn-sm btn-outline-secondary" value="报名信息">-->
-<!--                                    </a>-->
-<!--                                    <a th:href="@{/class/delClass(classId=${class.classId})}"-->
-<!--                                       style="text-decoration: none">-->
-<!--                                        <input type="button" class="btn btn-sm btn-outline-danger"-->
-<!--                                               onclick="return del()" value="删除">-->
-<!--                                    </a>-->
-<!--                                </td>-->
-<!--                            </tr>-->
+                            <tr th:each="class:${classList}">
+                                <td th:text="${class.getcourseId()}">课程编号</td>
+                                <td th:text="${class.getcourseName()}">课程名称</td>
+                                <td th:text="${class.gettrId()}">教练编号</td>
+                                <td th:text="${class.getcourseBegin()}">课程开始时间</td>
+                                <td th:text="${class.getcourseEnd()}">课程结束时间</td>
+                                <td th:text="${class.getcoursePrice()}">课程价格</td>
+                                <td th:text="${class.geteqId()}">器材编号</td>
+                                <td th:text="${class.getInsertTime()}">插入时间</td>
+                                <td th:text="${class.getUpdateTime()}">修改时间</td>
+                                <td th:text="${class.getRemarks()}">备注</td>
+<!--                            <tr th:each="class:${classList}">
+                                <td th:text="${class.courseId}">课程编号</td>
+                                <td th:text="${class.courseName}">课程名称</td>
+                                <td th:text="${class.trId}">教练编号</td>
+                                <td th:text="${class.courseBegin}">课程开始时间</td>
+                                <td th:text="${class.courseEnd}">课程结束时间</td>
+                                <td th:text="${class.coursePrice}">课程价格</td>
+                                <td th:text="${class.eqId}">器材编号</td>
+                                <td th:text="${class.insertTime}">插入时间</td>
+                                <td th:text="${class.updateTime}">修改时间</td>
+                                <td th:text="${class.remarks}">备注</td>-->
+                                <td>
+                                   <a th:href="@{/class/selClassOrder(courseId=${class.getcourseId()})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-secondary" value="报名信息">
+                                    </a>
+                                    <a th:href="@{/class/delClass(courseId=${class.getcourseId()})}"
+                                       style="text-decoration: none">
+                                        <input type="button" class="btn btn-sm btn-outline-danger"
+                                               onclick="return del()" value="删除">
+                                    </a>
+                                </td>-->
+                            </tr>
                             </tbody>
                         </table>
                     </div>

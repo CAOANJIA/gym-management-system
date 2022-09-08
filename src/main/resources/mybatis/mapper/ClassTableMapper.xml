@@ -9,27 +9,27 @@
         FROM class_table
     </select>
 
-    <delete id="deleteClassByClassId" parameterType="java.lang.Integer">
+    <delete id="deleteClassBycourseId" parameterType="java.lang.Integer">
         DELETE
         FROM class_table
-        WHERE class_id = #{classId}
+        WHERE courseId = #{courseId}
     </delete>
 
     <insert id="insertClass" parameterType="classTable">
-        INSERT INTO class_table(class_id, class_name, class_begin, class_time, coach)
-        VALUES (#{classId}, #{className}, #{classBegin}, #{classTime}, #{coach})
+INSERT INTO class_table (courseId, courseName, trId, courseBegin, courseEnd, coursePrice, eqId, insertTime, updateTime, remarks)
+        VALUES (#{courseId},#{courseName}, #{trId}, #{courseBegin}, #{courseEnd}, #{coursePrice}, #{eqId}, #{insertTime}, #{updateTime}, #{remarks})
     </insert>
 
-    <select id="selectByClassId" parameterType="java.lang.Integer" resultType="classTable">
+    <select id="selectBycourseId" parameterType="java.lang.Integer" resultType="classTable">
         SELECT *
         FROM class_table
-        WHERE class_id = #{classId}
+        WHERE courseId = #{courseId}
     </select>
 
-    <delete id="deleteOrderByClassId" parameterType="java.lang.Integer">
+    <delete id="deleteOrderBycourseId" parameterType="java.lang.Integer">
         DELETE
         FROM class_order
-        WHERE class_id = #{classId}
+        WHERE courseId = #{courseId}
     </delete>
 
 
