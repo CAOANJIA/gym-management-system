@@ -10,5 +10,9 @@ public interface BillService {
 
     Boolean insertBill(Bill bill);
 
+
+    Integer querySumAmountByMonth(Integer month, String rcType);
+
     List<Bill> selectBillByUserId(Integer userId);
+
 }

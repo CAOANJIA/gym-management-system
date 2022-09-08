@@ -32,5 +32,19 @@ INSERT INTO class_table (courseId, courseName, trId, courseBegin, courseEnd, cou
         WHERE courseId = #{courseId}
     </delete>
 
+    <update id="updateClassBycourseId" parameterType="classTable">
+        UPDATE class_table
+        SET courseId       = #{courseId},
+            courseName     = #{courseName},
+            trId      = #{trId},
+            courseBegin   = #{courseBegin},
+            courseEnd = #{courseEnd},
+            coursePrice = #{coursePrice},
+            eqId = #{eqId},
+            insertTime = #{insertTime},
+            updateTime = #{updateTime},
+            remarks    = #{remarks}
+        WHERE courseId = #{courseId}
+    </update>
 
 </mapper>
