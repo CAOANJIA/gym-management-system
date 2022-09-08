@@ -126,6 +126,7 @@ public class UserController {
         System.out.println(member);
         System.out.println(member1);
         member.setUserAc(member1.getUserAc());
+        member.setUserId(member1.getUserAc());
 
         memberService.updateMemberByMemberAccount(member);
         return "userInformation";
@@ -195,15 +196,15 @@ public class UserController {
 
     //会员充值界面
     @RequestMapping("/updateBusiness")
-    public String updateUserBusiness(Member member,Integer RechargeBalance) {
-//        Member member1 = (Member) session.getAttribute("user");
+    public String updateUserBusiness(Member member,Integer RechargeBalance, HttpSession session) {
+        Member member1 = (Member) session.getAttribute("user");
 
 //        member.setUserAc(member1.getUserAc());
 //        member.setUserPt(RechargeBalance);
         Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String nowDay = simpleDateFormat.format(date);
-        System.out.println(RechargeBalance);
+        member.setUserName(member1.getUserName());
         member.setUserPt(member.getUserPt()+RechargeBalance);
         memberService.updateMemberPtByMemberAccount(member);
 //        memberService.updateMemberByMemberAccount(member);
@@ -213,7 +214,7 @@ public class UserController {
         bill.setRcAmount(RechargeBalance);
         bill.setInsertTime(nowDay);
         billService.insertBill(bill);
-        return "redirect:/user/toUserBusiness";
+        return "userBusiness";
     }
 
     //查看余额变动记录
