@@ -106,6 +106,13 @@ public class MessageServiceTest {
         bill.setRemarks("no");
         billService.insertBill(bill);
     }
+
+    @Test
+    public void testselectMemberPt(){
+        Integer Pt =
+                memberService.selectMemberPtByMemberAccount(1111);
+        System.out.println(Pt);
+    }
 }
 
 
