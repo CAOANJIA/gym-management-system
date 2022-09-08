@@ -17,7 +17,7 @@
     <select id="selectClassOrderByMemberAccount" parameterType="java.lang.Integer" resultType="classOrder">
         SELECT *
         FROM class_order
-        WHERE member_account = #{memberAccount}
+        WHERE userId = #{userId}
     </select>
 
     <delete id="deleteByClassOrderId" parameterType="java.lang.Integer">
