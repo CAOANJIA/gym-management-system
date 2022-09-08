@@ -78,13 +78,16 @@ public class UserController {
 
     //跳转新增留言页面
     @RequestMapping("/toAddMessage")
-    public String toMessage() {
+    public String toMessage(Model model, HttpSession session) {
+
+        Member member = (Member) session.getAttribute("user");
+        model.addAttribute("member", member);
         return "addMessage";
     }
 
     //添加留言界面
     @RequestMapping("/addMessage")
-    public String toAddMessage(Message message) {
+    public String toAddMessage(Message message,Integer userId) {
         //工号随机生成
 //        Random random = new Random();
 //        String account1 = "1010";
@@ -99,10 +102,13 @@ public class UserController {
         String nowDay = simpleDateFormat.format(date);
 //
 //        employee.setEmployeeAccount(account);
+
         message.setInsertTime(nowDay);
+//        message.setUserId(1234);
 //        System.out.println(nowDay);
 //
 //        employeeService.insertEmployee(employee);
+
         messageService.insertMessage(message);
 
         return "redirect:/user/toUserMessage";

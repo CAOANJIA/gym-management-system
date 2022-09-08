@@ -33,20 +33,21 @@
 
                             <tr>
                                 <td text-align="center">留言用户编号：</td>
-                                <td><input type="text" class="form-control" placeholder="请输入您的编号" name="userId">
+                                <td><input type="text" class="form-control" placeholder="请输入您的编号"
+                                           th:value="${member.userId}" name="userId">
                                 </td>
                             </tr>
                             <tr>
                                 <td text-align="center">留言内容</td>
-                                <td><input type="text" class="form-control" placeholder="留言内容" name="cmContent">
+                                <td><input type="text" class="form-control" placeholder="请输入您的留言内容" name="cmContent">
                                 </td>
                             </tr>
-                            <tr>
-                                <td text-align="center">留言时间</td>
-                                <td><input type="text" class="form-control" placeholder="留言时间由系统自动生成" name="insertTime"
-                                           disabled="disabled">
-                                </td>
-                            </tr>
+<!--                            <tr>-->
+<!--                                <td text-align="center">留言时间</td>-->
+<!--                                <td><input type="text" class="form-control" placeholder="留言时间由系统自动生成" name="insertTime"-->
+<!--                                           disabled="disabled">-->
+<!--                                </td>-->
+<!--                            </tr>-->
                         </table>
                         <div style="text-align:center;margin-top:20px;margin-bottom:20px">
                             <input type="submit" class="btn btn-outline-success" value="添加">

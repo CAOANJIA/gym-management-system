@@ -57,7 +57,7 @@
                         <table id="datatablesSimple">
                             <thead>
                             <tr>
-                                <th>留言编号</th>
+<!--                                <th>留言编号</th>-->
                                 <th>留言用户编号</th>
                                 <th>留言内容</th>
                                 <th>留言时间</th>
@@ -66,7 +66,7 @@
 
                             <tbody>
                             <tr th:each="mess : ${messages}">
-                                <td th:text="${mess.cmId}">留言编号</td>
+<!--                                <td th:text="${mess.cmId}">留言编号</td>-->
                                 <td th:text="${mess.userId}">留言用户编号</td>
                                 <td th:text="${mess.cmContent}">留言内容</td>
                                 <td th:text="${mess.insertTime}">留言时间</td>
