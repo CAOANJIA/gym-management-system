@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="adminCommon::common-header">
+
+</head>
+<body class="sb-nav-fixed">
+<nav th:replace="adminCommon::common-navbar"></nav>
+
+<div id="layoutSidenav">
+    <div th:replace="adminCommon::common-sidenav"></div>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">消费统计</h1>
+
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a th:href="@{/toAdminMain}">主页</a></li>
+                    <li class="breadcrumb-item active">消费统计</li>
+                </ol>
+
+<!--                <div>-->
+                    <div id="chongzhi" style="width: 450px; height: 450px; display: inline-block"></div>
+                    <div id="xiaofei" style="width: 450px; height: 450px; display: inline-block"></div>
+
+
+<!--                </div>-->
+
+
+
+            </div>
+        </main>
+    </div>
+</div>
+
+
+<div th:include="adminCommon::common-scripts"></div>
+<script>
+    var myChart1 = echarts.init(document.getElementById('xiaofei'));
+    var myChart2 = echarts.init(document.getElementById('chongzhi'));
+
+    $.getJSON("/queryXiaoFeiSumAmountByMonth", function (data) {
+        var xAxis=[]
+        var yAxis=[]
+        for(var i=0;i<data.length;i++){
+            xAxis.push(data[i].mon);
+            yAxis.push(data[i].sumAmount);
+        }
+
+        const labelRight = {
+            position: 'right'
+        };
+        option1 = {
+            backgroundColor: '',
+            title: {
+                text: '所有会员消费统计',
+
+                // x: 'center'
+                x: 'left'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            xAxis: {
+                type: 'category',
+                // data: xAxis
+                data: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+            },
+            yAxis: {
+                type: 'value',
+                name: "单位（元）"
+            },
+            series: [{
+                data: yAxis,
+                type: 'bar'
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart1.setOption(option1);
+    })
+
+    $.getJSON("/queryChongZhiSumAmountByMonth", function (data) {
+        var xAxis=[]
+        var yAxis=[]
+        for(var i=0;i<data.length;i++){
+            xAxis.push(data[i].mon);
+            yAxis.push(data[i].sumAmount);
+        }
+
+        const labelRight = {
+            position: 'right'
+        };
+        option2 = {
+            backgroundColor: '',
+            title: {
+                text: '所有会员充值统计',
+
+                // x: 'center'
+                x: 'left'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            xAxis: {
+                type: 'category',
+                // data: xAxis
+                data: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+            },
+            yAxis: {
+                type: 'value',
+                name: "单位（元）"
+            },
+            series: [{
+                data: yAxis,
+                type: 'bar'
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart2.setOption(option2);
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!--<script>-->
+<!--    var myChart1 = echarts.init(document.getElementById('main1'));-->
+<!--    $.getJSON("/queryXiaoFeiSumAmountByMonth", function (data) {-->
+<!--        var xAxis=[]-->
+<!--        var yAxis=[]-->
+<!--        for(var i=0;i<data.length;i++){-->
+<!--            xAxis.push(data[i].mon);-->
+<!--            yAxis.push(data[i].sumAmount);-->
+<!--        }-->
+
+<!--        const labelRight = {-->
+<!--            position: 'right'-->
+<!--        };-->
+<!--        option1 = {-->
+<!--            backgroundColor: '',-->
+<!--            title: {-->
+<!--                text: '所有会员消费统计',-->
+
+<!--                // x: 'center'-->
+<!--                x: 'left'-->
+<!--            },-->
+<!--            tooltip: {-->
+<!--                trigger: 'axis',-->
+<!--                axisPointer: {            // 坐标轴指示器，坐标轴触发有效-->
+<!--                    type: 'line'        // 默认为直线，可选为：'line' | 'shadow'-->
+<!--                }-->
+<!--            },-->
+<!--            xAxis: {-->
+<!--                type: 'category',-->
+<!--                // data: xAxis-->
+<!--                data: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]-->
+<!--            },-->
+<!--            yAxis: {-->
+<!--                type: 'value',-->
+<!--                name: "单位（元）"-->
+<!--            },-->
+<!--            series: [{-->
+<!--                data: yAxis,-->
+<!--                type: 'bar'-->
+<!--            }]-->
+<!--        };-->
+
+<!--        // 使用刚指定的配置项和数据显示图表。-->
+<!--        myChart1.setOption(option1);-->
+<!--    })-->
+
+
+<!--</script>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <script type="text/javascript" src="../js/echarts.min.js"></script>-->
+<!--    <script type="text/javascript" src="../js/jquery.min.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--  <h1>柱状图</h1>-->
+<!--  <div id="main" style="width: 450px; height: 450px"></div>-->
+<!--  <script>-->
+<!--      var myChart = echarts.init(document.getElementById('main'));-->
+<!--      $.getJSON("/queryXiaoFeiSumAmountByMonth", function (data) {-->
+<!--          var xAxis=[]-->
+<!--          var yAxis=[]-->
+<!--          for(var i=0;i<data.length;i++){-->
+<!--              xAxis.push(data[i].mon);-->
+<!--              yAxis.push(data[i].sumAmount);-->
+<!--          }-->
+
+<!--          const labelRight = {-->
+<!--              position: 'right'-->
+<!--          };-->
+<!--          option = {-->
+<!--              backgroundColor: '#483d8b',-->
+<!--              title: {-->
+<!--                  text: '',-->
+
+<!--                  // x: 'center'-->
+<!--                  x: 'left'-->
+<!--              },-->
+<!--              tooltip: {-->
+<!--                  trigger: 'axis',-->
+<!--                  axisPointer: {            // 坐标轴指示器，坐标轴触发有效-->
+<!--                      type: 'line'        // 默认为直线，可选为：'line' | 'shadow'-->
+<!--                  }-->
+<!--              },-->
+<!--              xAxis: {-->
+<!--                  type: 'category',-->
+<!--                  data: xAxis-->
+<!--              },-->
+<!--              yAxis: {-->
+<!--                  type: 'value'-->
+<!--              },-->
+<!--              series: [{-->
+<!--                  data: yAxis,-->
+<!--                  type: 'bar'-->
+<!--              }]-->
+<!--          };-->
+
+<!--          // 使用刚指定的配置项和数据显示图表。-->
+<!--          myChart.setOption(option);-->
+<!--      })-->
+
+
+<!--  </script>-->
+
+
+<!--</body>-->
+<!--</html>-->
