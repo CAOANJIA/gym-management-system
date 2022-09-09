@@ -13,30 +13,66 @@ public class ClassTable {
     private String updateTime;
     private String remarks;
 
-    public Integer getcourseId() { return courseId; }
-    public void setcourseId(Integer courseId) { this.courseId = courseId; }
+    public Integer getCourseId() {
+        return courseId;
+    }
 
-    public String getcourseName() { return courseName; }
-    public void setcourseName(String courseName) { this.courseName = courseName; }
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
+    }
 
-    public Integer gettrId() { return trId; }
-    public void settrId(Integer trId) { this.trId = trId; }
+    public String getCourseName() {
+        return courseName;
+    }
 
-    public String getcourseBegin() { return courseBegin; }
-    public void setcourseBegin(String courseBegin) { this.courseBegin = courseBegin; }
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
 
-    public String getcourseEnd() { return courseEnd; }
-    public void setcourseEnd(String courseEnd) { this.courseEnd = courseEnd; }
+    public Integer getTrId() {
+        return trId;
+    }
 
-    public Integer getcoursePrice() { return coursePrice; }
-    public void setcoursePrice(Integer coursePrice) { this.coursePrice = coursePrice; }
+    public void setTrId(Integer trId) {
+        this.trId = trId;
+    }
 
-    public Integer geteqId() { return eqId; }
-    public void seteqId(Integer eqId) { this.eqId = eqId; }
+    public String getCourseBegin() {
+        return courseBegin;
+    }
+
+    public void setCourseBegin(String courseBegin) {
+        this.courseBegin = courseBegin;
+    }
+
+    public String getCourseEnd() {
+        return courseEnd;
+    }
+
+    public void setCourseEnd(String courseEnd) {
+        this.courseEnd = courseEnd;
+    }
+
+    public Integer getCoursePrice() {
+        return coursePrice;
+    }
+
+    public void setCoursePrice(Integer coursePrice) {
+        this.coursePrice = coursePrice;
+    }
+
+    public Integer getEqId() {
+        return eqId;
+    }
+
+    public void setEqId(Integer eqId) {
+        this.eqId = eqId;
+    }
 
     public String getInsertTime() {
         return insertTime;
     }
+
     public void setInsertTime(String insertTime) {
         this.insertTime = insertTime;
     }
@@ -44,6 +80,7 @@ public class ClassTable {
     public String getUpdateTime() {
         return updateTime;
     }
+
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
@@ -51,6 +88,7 @@ public class ClassTable {
     public String getRemarks() {
         return remarks;
     }
+
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }

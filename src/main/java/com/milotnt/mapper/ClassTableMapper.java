@@ -1,6 +1,7 @@
 package com.milotnt.mapper;
 
 import com.milotnt.pojo.ClassTable;
+import com.milotnt.pojo.Equipment;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -16,6 +17,9 @@ public interface ClassTableMapper {
 
     //添加课程
     Boolean insertClass(ClassTable classTable);
+
+    //根据id修改课程信息
+    Boolean updateClassBycourseId(ClassTable classTable);
 
     //根据id查询课表
     ClassTable selectBycourseId(Integer courseId);

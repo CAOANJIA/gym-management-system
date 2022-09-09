@@ -87,7 +87,7 @@ public class UserController {
 
     //添加留言界面
     @RequestMapping("/addMessage")
-    public String toAddMessage(Message message) {
+    public String toAddMessage(Message message,HttpSession session) {
         //工号随机生成
 //        Random random = new Random();
 //        String account1 = "1010";
@@ -106,6 +106,9 @@ public class UserController {
 //        System.out.println(nowDay);
 //
 //        employeeService.insertEmployee(employee);
+        //获取当前用户id
+        Member member = (Member) session.getAttribute("user");
+        message.setUserId(member.getUserId());
         messageService.insertMessage(message);
 
         return "redirect:/user/toUserMessage";
@@ -145,8 +148,8 @@ public class UserController {
 
     //退课
     @RequestMapping("delUserClass")
-    public String deleteUserClass(Integer classOrderId) {
-        classOrderService.deleteByClassOrderId(classOrderId);
+    public String deleteUserClass(Integer appid) {
+        classOrderService.deleteByClassOrderId(appid);
         return "redirect:toUserClass";
     }
 
@@ -166,14 +169,13 @@ public class UserController {
         ClassTable classTable = classTableService.selectBycourseId(courseId);
         Member member = (Member) session.getAttribute("user");
 
-        Integer courseId1 = classTable.getcourseId();
-        String courseName = classTable.getcourseName();
-        String coach = classTable.getcourseBegin();
-        String classBegin = classTable.getcourseBegin();
-        String memberName = member.getUserName();
+        Integer courseId1 = classTable.getCourseId();
+        Integer trId = classTable.getTrId();
+        String classBegin = classTable.getCourseBegin();
+        String classEnd =  classTable.getCourseEnd();
         Integer memberAccount = member.getUserAc();
 
-        ClassOrder classOrder = new ClassOrder(courseId1, courseName, coach, memberName, memberAccount, classBegin);
+        ClassOrder classOrder = new ClassOrder( courseId1,trId, memberAccount,classBegin,classEnd);
         Integer memberAccount1 = member.getUserAc();
         ClassOrder classOrder1 = classOrderService.selectMemberByClassIdAndMemberAccount(courseId1, memberAccount1);
 
@@ -205,6 +207,9 @@ public class UserController {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String nowDay = simpleDateFormat.format(date);
         member.setUserName(member1.getUserName());
+        if(member.getUserPt()==null){
+            member.setUserPt(0);
+        }
         member.setUserPt(member.getUserPt()+RechargeBalance);
         memberService.updateMemberPtByMemberAccount(member);
 //        memberService.updateMemberByMemberAccount(member);

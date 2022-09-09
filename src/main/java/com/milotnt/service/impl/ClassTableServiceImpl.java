@@ -30,6 +30,11 @@ public class ClassTableServiceImpl implements ClassTableService {
     }
 
     @Override
+    public Boolean updateClassBycourseId(ClassTable classTable) {
+        return classTableMapper.updateClassBycourseId(classTable);
+    }
+
+    @Override
     public ClassTable selectBycourseId(Integer courseId) {
         return classTableMapper.selectBycourseId(courseId);
     }

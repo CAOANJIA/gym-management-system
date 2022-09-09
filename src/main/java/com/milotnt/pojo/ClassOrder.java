@@ -2,72 +2,63 @@ package com.milotnt.pojo;
 
 public class ClassOrder {
 
-    private Integer classOrderId;
-    private Integer classId;
-    private String className;
-    private String coach;
-    private String memberName;
-    private Integer memberAccount;
+    private Integer appId;
+    private Integer courseId;
+    private Integer trId;
+    private Integer userId;
     private String classBegin;
+    private String classEnd;
 
-    public ClassOrder() {
+    @Override
+    public String toString() {
+        return "ClassOrder{" +
+                "appId=" + appId +
+                ", courseId=" + courseId +
+                ", trId='" + trId + '\'' +
+                ", userId=" + userId +
+                ", classBegin='" + classBegin + '\'' +
+                ", classEnd='" + classEnd + '\'' +
+                '}';
     }
 
-    public ClassOrder(Integer classId, String className, String coach, String memberName, Integer memberAccount, String classBegin) {
-        this.classId = classId;
-        this.className = className;
-        this.coach = coach;
-        this.memberName = memberName;
-        this.memberAccount = memberAccount;
+    public Integer getAppId() {
+        return appId;
+    }
+
+    public void setAppId(Integer appId) {
+        this.appId = appId;
+    }
+
+    public Integer getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
+    }
+
+    public Integer getTrId() {
+        return trId;
+    }
+
+    public void setTrId(Integer trId) {
+        this.trId = trId;
+    }
+
+    public ClassOrder(Integer courseId, Integer trId, Integer userId, String classBegin, String classEnd) {
+        this.courseId = courseId;
+        this.trId = trId;
+        this.userId = userId;
         this.classBegin = classBegin;
+        this.classEnd = classEnd;
     }
 
-    public Integer getClassOrderId() {
-        return classOrderId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setClassOrderId(Integer classOrderId) {
-        this.classOrderId = classOrderId;
-    }
-
-    public Integer getClassId() {
-        return classId;
-    }
-
-    public void setClassId(Integer classId) {
-        this.classId = classId;
-    }
-
-    public String getClassName() {
-        return className;
-    }
-
-    public void setClassName(String className) {
-        this.className = className;
-    }
-
-    public String getCoach() {
-        return coach;
-    }
-
-    public void setCoach(String coach) {
-        this.coach = coach;
-    }
-
-    public String getMemberName() {
-        return memberName;
-    }
-
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    }
-
-    public Integer getMemberAccount() {
-        return memberAccount;
-    }
-
-    public void setMemberAccount(Integer memberAccount) {
-        this.memberAccount = memberAccount;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getClassBegin() {
@@ -78,16 +69,11 @@ public class ClassOrder {
         this.classBegin = classBegin;
     }
 
-    @Override
-    public String toString() {
-        return "ClassOrder{" +
-                "classOrderId=" + classOrderId +
-                ", classId=" + classId +
-                ", className='" + className + '\'' +
-                ", coach='" + coach + '\'' +
-                ", memberName='" + memberName + '\'' +
-                ", memberAccount=" + memberAccount +
-                ", classBegin='" + classBegin + '\'' +
-                '}';
+    public String getClassEnd() {
+        return classEnd;
+    }
+
+    public void setClassEnd(String classEnd) {
+        this.classEnd = classEnd;
     }
 }

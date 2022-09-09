@@ -12,6 +12,9 @@ public interface ClassTableService {
     //根据id删除课程
     Boolean deleteClassBycourseId(Integer courseId);
 
+    //根据id修改课程信息
+    Boolean updateClassBycourseId(ClassTable classTable);
+
     //添加课程
     Boolean insertClass(ClassTable classTable);
 

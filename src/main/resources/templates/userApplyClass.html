@@ -26,7 +26,6 @@
                             <thead>
                             <tr>
                                 <th>编号</th>
-                                <th>名称</th>
                                 <th>开始时间</th>
                                 <th>结束时间</th>
                                 <th>积分</th>
@@ -36,20 +35,19 @@
                             </thead>
 
                             <tbody>
-<!--                            <tr th:each="class:${classList}">
+                            <tr th:each="class:${classList}">
                                <td th:text="${class.courseId}">编号</td>
-                               <td th:text="${class.courseName}">名称</td>
                                <td th:text="${class.courseBegin}">开始时间</td>
                                <td th:text="${class.courseEnd}">结束时间</td>
                                <td th:text="${class.coursePrice}">积分</td>
                                <td th:text="${class.trId}">教练</td>
                                <td>
-                                    <a th:href="@{/user/applyClass(classId=${class.classId})}"
+                                    <a th:href="@{/user/applyClass(courseId=${class.courseId})}"
                                       style="text-decoration: none">
                                         <input type="button" class="btn btn-sm btn-outline-primary" value="报名">
                                     </a>
                                 </td>
-                            </tr>-->
+                            </tr>
                             </tbody>
                         </table>
                     </div>
