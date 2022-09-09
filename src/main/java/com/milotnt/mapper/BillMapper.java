@@ -15,4 +15,5 @@ public interface BillMapper {
     List<Bill> selectBillByUserId(Integer userId);
 
 
+    Integer querySumAmountByMonth(Integer month, String rcType);
 }

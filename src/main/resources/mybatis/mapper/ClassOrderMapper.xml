@@ -11,7 +11,7 @@
 
     <insert id="insertClassOrder" parameterType="classOrder">
         INSERT INTO class_order(class_order_id, class_id, class_name, coach, member_name, member_account, class_begin)
-        VALUES (#{appid}, #{classId}, #{className}, #{coach}, #{memberName}, #{memberAccount}, #{classBegin})
+        VALUES (#{appId}, #{courseId}, #{className}, #{coach}, #{memberName}, #{memberAccount}, #{classBegin})
     </insert>
 
     <select id="selectClassOrderByMemberAccount" parameterType="java.lang.Integer" resultType="classOrder">
@@ -23,20 +23,20 @@
     <delete id="deleteByClassOrderId" parameterType="java.lang.Integer">
         DELETE
         FROM class_order
-        WHERE appId = #{appid}
+        WHERE appId = #{appId}
     </delete>
 
     <select id="selectMemberByClassIdAndMemberAccount" parameterType="java.lang.Integer" resultType="classOrder">
         SELECT *
         FROM class_order
-        WHERE courseId = #{classId}
+        WHERE courseId = #{courseId}
           AND userId = #{memberAccount}
     </select>
 
     <select id="selectMemberOrderList" parameterType="java.lang.Integer" resultType="classOrder">
         SELECT *
         FROM class_order
-        WHERE courseId = #{classId}
+        WHERE courseId = #{courseId}
     </select>
 
 

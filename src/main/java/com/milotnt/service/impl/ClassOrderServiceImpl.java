@@ -40,7 +40,7 @@ public class ClassOrderServiceImpl implements ClassOrderService {
     }
 
     @Override
-    public List<ClassOrder> selectMemberOrderList(Integer classId) {
-        return classOrderMapper.selectMemberOrderList(classId);
+    public List<ClassOrder> selectMemberOrderList(Integer courseId) {
+        return classOrderMapper.selectMemberOrderList(courseId);
     }
 }

@@ -21,9 +21,9 @@ public interface ClassOrderMapper {
     Boolean deleteByClassOrderId(Integer appId);
 
     //查询会员是否报名该课程
-    ClassOrder selectMemberByClassIdAndMemberAccount(Integer classId, Integer memberAccount);
+    ClassOrder selectMemberByClassIdAndMemberAccount(Integer courseId, Integer memberAccount);
 
     //根据课程id查询所有报名的会员
-    List<ClassOrder> selectMemberOrderList(Integer classId);
+    List<ClassOrder> selectMemberOrderList(Integer courseId);
 
 }
